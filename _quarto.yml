@@ -1,0 +1,27 @@
+project:
+  type: book
+
+profile:
+    group:
+      - [html, pdf] 
+  
+book:
+  title: "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows"
+  author: "Rich Ramsey"
+  version: "0.1"
+  date: today
+  repo-url: https://github.com/rich-ramsey/doing-psych-brain-science
+  repo-actions: [edit, issue, source]
+
+  page-footer:
+    left: "© Rich Ramsey, ETH Zürich. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    right:
+      - icon: github
+        href: https://github.com/rich-ramsey/doing-cognitive-brain-science
+
+bibliography: references.bib
+csl: apa.csl
+
+execute:
+  freeze: auto
+  cache: false

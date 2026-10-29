@@ -1,0 +1,35 @@
+# Limitations {#sec-limitations}
+
+::: {.callout-tip}
+## tl;dr
+
+The workflow aims to be general, rather than universal.
+:::
+
+In this chapter, I consider constraints on the generality of the workflow, as well as some potential barriers to uptake.
+
+## Constraints on generality
+
+The outlined workflow aims to be general enough for a majority of use cases that we come into contact with.
+But I'm sure there are exceptions where the workflow may not transfer so effectively, and which represent necessary constraints on the generality of the proposed workflow [@simonsConstraintsGeneralityCOG2017]. 
+For instance, maybe some research tools, such as MRI, EEG or pupillometry measures, generate specialised data formats and/or require specific software (FSL, SPM, EEGLAB) that may impose its own data processing pipelines.
+This is to be expected. 
+
+This is also where a workflow can be used as a lens to view a data science project through, rather than a toolchain with a handle that gets cranked.
+A one-size-fits-all workflow is unrealistic anyway, given the complex nature of scientific data and associated materials. 
+Instead, a workflow can be seen as a toolkit, aspects of which can be deployed in a variety of contexts and across distinct projects.
+And one may not use **any** of the tools that I presented, but instead use another set of tools to satisfy the principle that it should be a minimum expectation and routine that scientific materials are reasonably easy to verify. 
+
+## Barriers to uptake
+
+As outlined in the @sec-overview section, the workflow that we use spans a number of interconnected tools. 
+And depending on your familiarity with such tools, the sheer volume can be overwhelming.
+If you do decide to adopt aspects of this workflow, I suggest embracing principles of effective behaviour change [@poldrackHardBreakWhy2021].
+And watch this [documentary](https://en.wikipedia.org/wiki/The_Weight_of_the_Nation) on weight loss programme effectiveness, which is instructive and engaging when it comes to thinking about principles of effective behaviour change.
+
+Some quick starting points would be: 
+
+1) Don't change everything at once, as it will be overwhelming and exhausting. 
+2) Take a stepwise approach that builds in new behaviours incrementally.
+3) Wait for new behaviours to form habits, before adding new aspects to the workflow.
+4) Prioritise low-hanging fruit first to get some easy and enjoyable wins under your belt.

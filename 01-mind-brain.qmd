@@ -1,0 +1,41 @@
+# What's in your head? {#sec-mind-brain}
+
+::: {.callout-tip}
+## tl;dr
+
+Psychological and brain science research holds the potential for wide-ranging societal impact, but to realise that potential research materials need to be available and routinely verified.
+:::
+
+I remember taking a final year undergraduate class on neuropsychology and being utterly fascinated. 
+The brain controlled movements, breathing, social interactions, disease, disorder, rehabilitation, expertise, and on and on.
+How could one ***not*** be fascinated?
+
+The potential seemed enormous.
+It immediately made me want to do a PhD in a related field.
+If only we could understand cognitive and brain "mechanisms" better, then all manner of possibilities and opportunities might open up to understand how humans experience in the world.
+And that genuine level of excitement about the ***potential*** of psychological and brain science research feels about as right today as it did back then in 2003.
+
+## Research materials are ***not*** routinely verified
+
+But, how are research findings in relation to mental processes verified?
+How would we know if conclusions and subsequent societal decisions were based on solid foundations?
+A layperson may expect that a dispassionate, sober, professional, careful and "scientific" process exists for verifying scientific research.
+And they would be wrong.
+And that is a big problem.
+
+For the vast majority of research reports in academic journals, the underlying research materials, such as data and code, are not available to ***anyone else*** to verify.
+This is because they were simply never shared in the first place.
+Even the academics who peer-review the work at the request of a journal, and who make a formal recommendation about the quality of the research, do not typically get access to these materials. 
+Instead, all the reviewers see is a static pdf document and nothing else.
+
+Sometimes data and code are made "available on request".
+But, when these materials are formally requested they are often not provided [@husseyDataNotAvailable2025]. 
+And in many cases, the written report is hidden behind paywalls and only available via subscription, which excludes many institutions and the public from access. 
+In response, there have been some recent changes in culture and expectations that have led to more sharing of data and code [@wilkinsonFAIRGuidingPrinciples2016], but this comes from a very low base and without widespread formal training or standardisation. 
+
+## Towards realising potential 
+
+If we want to realise the potential of cognitive and brain science, one that seeks credibility and legitimacy to impact society, then a more professional approach to the fundamental importance of verification is required.
+If these fundamentals are not achieved (or even strived for in a meaningful manner) then one might ask: What's the point of doing the research in the first place?
+For example, if research cannot be accessed or used by other professional scientists easily and reliably, then what chance is there of making genuine societal impact in the domains of health, education or public policy? 
+I agree with others that the chances are close to zero [@arslanScienceNeedsDownvotes2026]. 

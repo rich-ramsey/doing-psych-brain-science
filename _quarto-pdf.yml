@@ -1,0 +1,35 @@
+project:
+  type: book
+  output-dir: _book-pdf
+  
+book:
+  chapters:
+    - index.qmd
+
+    - part: intro.qmd
+      chapters: 
+        - 01-mind-brain.qmd
+        - 02-history.qmd
+        - 03-done.qmd
+        - 04-infrastructure.qmd
+        
+    - part: project-workflow.qmd
+      chapters: 
+        - 05-overview.qmd
+        - 06-planning.qmd
+        - 07-data-management.qmd
+        - 08-data-processing.qmd
+        - 09-data-visualisation.qmd
+        - 10-inferential-workflow.qmd
+        - 11-dissemination.qmd
+        - 12-limitations.qmd
+
+format:
+  typst:
+    keep-typ: true
+    toc: true
+    number-sections: true
+    section-numbering: 1.1.1
+    echo: false
+    papersize: a4
+    include-in-header: _typst-style.typ

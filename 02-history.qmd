@@ -1,0 +1,54 @@
+# Historical context {#sec-history}
+
+::: {.callout-tip}
+## tl;dr
+
+Verifying other's research findings is an old endeavour, which has always been costly, and largely undervalued in recent times.
+:::
+
+The desire to check others' research is an old endeavour.
+And it is not easy to do. 
+Producing trustworthy scientific material is hard in any domain. 
+Making that material easily accessible and verifiable complicates matters further.
+And widespread access to tools that make this easier are relatively new.
+Indeed, the notion of [science as practicing amateur software development](https://www.youtube.com/watch?v=8qzVV7eEiaI) is a reasonably new possibility in the scheme of the history of science.
+To make this concrete, let's look at a few moments in history.
+
+## The emergence of the Royal Society (1600s)
+
+The motto of the UK's [Royal Society](https://royalsociety.org/about-us/who-we-are/history/) (founded in 1662), is 'nullius in verba', which means 'take nobody's word for it'.
+And indeed, in 1679, Edmond Halley travelled to Poland along with his own equipment to verify the observations made by Johannes Hevelius [@jonesHalleyAstronomer1957].
+This would have been costly, in terms of time and money, but clearly underscores the value placed on verification.
+But the world and science was not as widespread or as interconnected as it is now.
+
+## The Industrial Publishing Complex (1950s onwards)
+
+From at least the 1950s onwards, academic publishing changed dramatically in pace, scale and reach with a proliferation of journals, institutions and people working as professional academics all over the world. 
+But, prior to the mass availability of the internet, sharing research materials would have remained difficult and expensive. 
+And responsibilities were unclear and/or unspecified. 
+For example, should the journal host all raw materials and share them upon request from others?
+And who would pay for any or all of this?
+As such, before the internet revolution changed things, there were legitimate practical barriers to sharing materials.
+
+## My PhD days (2004-2007)
+
+Even when I did my PhD, in an era when the internet was very much widespread, the idea that raw data or code would be submitted alongside a journal submission was largely unheard of in disciplines associated with psychology and neuroscience.
+As an illustrative example of the times, as I prepared my very first journal article submission, I burned the raw data to a DVD (young people, see [here](https://en.wikipedia.org/wiki/Optical_disc_authoring)).
+In the next meeting with my supervisors, I placed the DVD in a jiffy bag and asked: do I address this to the Editor-in-Chief and send it to the journal's mailing address?
+My supervisors laughed out loud.
+They then mentioned that they had heard about journals doing "data audits" before, but they didn't happen very often, and they had never been audited yet.
+
+As a young trainee scientist, I was genuinely shocked that nobody else, other than my coauthors, would check the data.
+And even then, it was certainly not routine for co-authors to go through the data and analysis steps with a fine tooth comb.
+To be clear, I was very lucky to have such supportive, involved and generous supervisors. 
+My observation is simply that there was a complete absence of industry standard on sharing research materials.
+Even in my naive researcher state, it was clear to me that this was not how science should be conducted.
+And it was also obvious that this was not how the public expected science to operate when spending taxpayer's money. 
+
+## Towards "born open" science (2015 onwards)
+
+As we move towards the present day, attitudes are slowly shifting.
+Instead of a static pdf document being the sole "product" of a scientific project, more and more actors - spanning individuals, journals, funding agencies and learned societies - recognise that the written report is merely window dressing for everything else that supports the claims being made, such as data, code and experimental materials [@buckheitWaveLabReproducibleResearch1995; @donohoInvitationReproducibleComputational2010].
+The challenge now is to build workflows that can deliver in response to this challenge.
+What might that such a workflow look like, in terms of infrastructure in general and in terms of research workflows in cognitive neuroscience?
+That is what this book addresses, but from the perspective of one lab.

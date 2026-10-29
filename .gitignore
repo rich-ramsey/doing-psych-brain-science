@@ -1,0 +1,24 @@
+# R
+/.Rproj.user/
+*.Rproj
+.Rhistory
+.RData
+.DS_Store
+renv/
+
+# quarto 
+/.quarto/
+/_freeze/
+**/*.quarto_ipynb
+*_cache/
+*_files/
+*site_libs
+
+# project stuff
+*scrap.qmd
+*.bak
+*notes.qmd
+*models/
+*scrap/
+*img/
+13-conclusions.qmd

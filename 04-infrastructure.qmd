@@ -1,0 +1,76 @@
+# Infrastructure {#sec-infrastructure}
+
+::: {.callout-tip}
+## tl;dr
+
+Watch this [talk](https://www.youtube.com/watch?v=8qzVV7eEiaI) by [Richard McElreath](https://www.eva.mpg.de/ecology/staff/richard-mcelreath/) titled "Science as amateur software development".
+:::
+
+This chapter covers the general-purpose tools that make everything else in the workflow possible. 
+These tools are taken from software engineering practices and turn a collection of scripts into something that works reliably and that someone else (or future you) can understand.
+
+## Why borrow from software engineering?
+
+The tools described here were not developed for science. 
+They were developed by software engineers to solve related problems: how do you write code that works, that can be modified without breaking everything, that multiple people can work on simultaneously, and that you can return to six months later and still understand?
+These are exactly the problems a research lab faces with data and analysis code. 
+The solutions transfer almost directly.
+This is a big area, which I do not attempt to cover in any great detail.
+Instead, in @sec-basic-infrastructure below, I highlight three key aspects of infrastructure. 
+
+## What if you don't feel like a software developer?
+
+I certainly don't feel like a software developer, and I have no credentials as one either.
+At the same time, in the process of doing science, I write code that analyses data, produces visualisations and builds models that **DIRECTLY** substantiate the scientific conclusions that I make in published work.  
+If the materials used to make scientific claims should be routinely accessible and verifiable, then scientists have an obligation to make all computer code available.
+And such an obligation is orthogonal to your level of experience in programming and software development.
+Thus, I think we have to recognise a hard truth: if your code is not ready for public scrutiny, then your science is not ready for public consumption.
+
+## Basic infrastructure {#sec-basic-infrastructure}
+
+In the following subsections, I outline three key themes regarding infrastructure.
+
+### Project organisation
+
+There are several useful resources that outline general principles of good project organisation, such as this textbook on data management [@lewisDataManagementLargeScale2024] and this journal article on code development [@rothTenPrinciplesReliable2025]. 
+More details can also be found in the @sec-data-management section of this book.
+
+Some key themes in summary are as follows.
+Start the project with the intention of it being a public facing resource in the end.
+Only things that absolutely must be kept private should be inaccessible. 
+Each project has one folder, which adopts a consistent structure across different projects, such as using consistent folder and filename conventions.
+There is a [README file](https://www.makeareadme.com/) at the project root folder, which outlines details of the repository. 
+Then whenever you land on a project, you consult the README file for an orientation. 
+There is clear separation between raw and processed data, as well as a clear description of datasets in a data dictionary.
+
+### Version control, backup and collaboration
+
+We use Git to version control all projects, and we use GitHub for an online backup of code and to collaborate on projects. 
+If you are unfamiliar with version control software, such as Git, then there are many helpful tutorials online (see [here](https://happygitwithr.com/) and [here](https://www.atlassian.com/git/tutorials)). 
+And if you use R and R Studio (or Positron), then this paper is particularly helpful [@vuorreCuratingResearchAssets2018].
+
+Git is designed primarily for code and limited to relatively small file sizes, but larger files (e.g., data and model objects) can be stored in other data repositories.
+We work within an Integrated Development Environment (IDE) that is designed for data science, such as Positron (previously RStudio), as this can make working with data and code so much easier, as well as more efficient and enjoyable.
+We connect local projects to an online repo, in order to iterate and collaborate with colleagues.
+The online repo can remain private during development, before being made public at a suitable point.
+
+### Reproducible pipelines
+
+The goal here is that you can reproduce your own work easily and efficiently, and others can reproduce it too.
+We use [`Quarto`](https://quarto.org/) documents for everything that we possibly can from data analysis files to written manuscripts and presentations.
+Quarto docs mix prose, as well as code from multiple languages (Python, R, Julia), and output to a wide range of document types (.html, pdf, word, presentation slides etc.).
+
+Within the R ecosystem we use [`renv`](https://rstudio.github.io/renv/articles/renv.html) for package management. 
+`renv` tracks the specific R package versions that you used per project and, in theory, allows other to use the same package versions when attempting to reproduce your analyses. 
+
+But `renv` is not perfect, and there can still be problems reproducing work across time and system settings, which this [talk](https://www.youtube.com/watch?v=l01u7Ue9pIQ) outlines.
+A more comprehensive solution is to use a container, such as [`Docker`](https://www.docker.com/), to reproduce the entire system. 
+Containers can be a bit off-putting initially, but this tutorial paper is an excellent starting point [@wiebelsLeveragingContainersReproducible2021b].
+A container is a shareable Linux environment with the appropriate package and system versions that anyone else can use or create. 
+For instance, if you use a different Operating System, or typically use different programming language, such as a Python user inspecting R code, then you can run and verify the code in a container.
+To see and work with a minimal test example that uses my group's typical data science workflow using Positron, then go [here](https://github.com/rich-ramsey/positron-test).
+
+## The basic rule
+
+Write everything as if someone else will need to run it without you present.
+That someone is usually you, eight months from now, having forgotten everything.

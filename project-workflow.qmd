@@ -1,0 +1,20 @@
+# Project workflow {#sec-project-workflow}
+
+::: {.content-visible when-format="html"}
+
+Part 2 outlines an example research workflow for psychology and cognitive neuroscience.
+
+## Chapters
+
+In this part of the book, there are eight chapters, which cover the following topics.
+
+- Workflow overview (@sec-overview)
+- Planning (@sec-planning)
+- Data management (@sec-data-management)
+- Data processing (@sec-data-processing)
+- Data visualisation (@sec-data-visualisation)
+- Inferential workflow (@sec-inferential-workflow)
+- Dissemination (@sec-dissemination)
+- Limitations (@sec-limitations)
+
+:::

@@ -1,0 +1,93 @@
+# Workflow overview {#sec-overview}
+
+::: {.callout-tip}
+## tl;dr
+
+Follow the fantastic [workflow](https://vuorre.com/posts/workflow/) of the amazing [Matti Vuorre](https://vuorre.com/).
+:::
+
+In this chapter, I want to summarise my group's current scientific workflow.
+I use the term "scientific workflow" as a bridge to link general software tools, such as git and containers, with more specific data science tools and choices regarding various things, such as research design, data wrangling, visualisation and model building. 
+For instance, one may change the coding language from R to Python or make different data wrangling, visualisation or modelling choices, whilst still using git and container for version control and reproducibility.
+The aim of the chapter is to provide a clear and coherent overview that can act as a roadmap for subsequent chapters.
+
+## Guiding principles
+
+- We aim to use software that is open source and free whenever possible.
+- We want the default workflow to be general enough for most use-cases that we encounter in psychology and neuroscience ^[There will be exceptions, of course. For example, specialised human neuroscience measurements might be one such exception. But the basic set of steps and tools should be useful in most cases as they are, whilst also serving as an excellent starting point to depart from when necessary.]. 
+
+    - As such, the workflow should embody what we consider "sensible defaults".
+
+## Benefits of using "sensible defaults"
+
+There are several benefits to establishing "sensible defaults" within a workflow:
+
+- A workflow document can be written and circulated, which is versioned and timestamped, but also dynamic such that it can be updated as approaches, tools and software change. 
+- Staff and students starting new projects have a template to follow that requires minimal input from others to get started.
+There are a host of resources, including textbooks, journal articles, blog posts, recorded lectures and tutorials, that new folks can follow.
+- There is a common frame of reference between team members, which can aid collaboration and pre-submission peer-review.
+For instance, it becomes far easier to perform code review and give feedback, if the overarching data science workflow is familiar. 
+- By design, the default workflow generalises to most projects in your lab.
+Therefore, the main time cost is setting up the first project.
+Once the workflow is established, the setup and basic structure can just be copied to other projects.
+And by doing so, one would hope to make the steps more habitual and routine in nature and therefore less effortful.
+- It becomes easier to see when departures from a default workflow are required and what might justify such departures. 
+For instance, if the data are flat or cross-sectional in nature and devoid of repeat observations then it will become clear very quickly that a multi-level model is not possible.
+
+## Science stack
+
+Here I build on the @sec-infrastructure section, by including other tools that form part of our scientific workflow.
+
+- **Literature**: [Zotero](https://www.zotero.org/)
+    - We store all literature sources in Zotero.
+- **IDE**: [Positron](https://positron.posit.co) (VS Code-based, R/Python)
+    - We use Positron as the primary IDE (previously RStudio).
+- **Version control/Collaboration/Backup/Sharing**: Git and GitHub (see [here](https://happygitwithr.com/) and [here](https://www.atlassian.com/git/tutorials))
+    - We use git for version control and GitHub for collaboration, backup and sharing.
+- **Language**: [R](https://www.r-project.org/)
+    - We try to use R for everything.
+- **Pre-registration**: [OSF](https://osf.io) & [AsPredicted.org](https://aspredicted.org/)
+    - We pre-register all confirmatory studies via the OSF or aspredicted. 
+- **Data wrangling and visualisation**: [Tidyverse](https://tidyverse.org/)
+    - We use the Tidyverse tools to make "tidy", long format dataframes and data visualisations.
+- **Modelling**: [brms](https://paul-buerkner.github.io/brms/) + [cmdstanr](https://mc-stan.org/cmdstanr/) + [CmdStan](https://mc-stan.org/docs/cmdstan-guide/)
+    - We use brms to fit Bayesian regression models, which uses stan on the backend.
+- **Package management**: [renv](https://rstudio.github.io/renv/)
+    - We use renv to manage and track the exact package versions used in each specific project.
+- **Manuscript**: [Quarto](https://quarto.org) + [quarto-preprint](https://github.com/mvuorre/quarto-preprint) (Typst PDF + HTML)
+    - We write manuscripts in quarto and output to .html, .pdf and even MS Word (if forced).
+- **Reproducible environment**: [Docker](https://www.docker.com) + [rocker](https://rocker-project.org)
+    - We have recently started using Docker to containerise our work.
+- **Data and model storage**: [OSF](https://osf.io) / [Zenodo](https://zenodo.org) (for large files)
+    - We *previously* used the OSF to store large files and model objects.
+    - But things are changing - see [here](https://zenodo.org/records/23063981), [here](https://daniellakens.blogspot.com/2026/08/which-data-repository-should-you-use.html), and [here](https://bettercode-book.org/book-sharing.html) for a summary of useful alternatives.
+- **Permanent archive**: [Zenodo](https://zenodo.org) (DOI on journal acceptance)
+    - We have recently started using Zenodo for long-term archival purposes.  
+
+## Workflow in practice
+
+Although the above may seem like a long list, I think a worked example of the main phases may help contextualise the workflow.
+More specifically, it will hopefully highlight a set of practices that we have developed in an attempt to make them habitual and thus easier to use in a routine and cognitively efficient manner.
+
+1. **Setup.**
+We always start by pointing the IDE (Positron) to the project folder and initialising git and renv.
+From then on, we are working in a self-contained project, which is version controlled and uses project-specific R package versions.
+And we only ever use a handful of commands from git and renv, so it is not overly cumbersome. 
+
+2. **Project development.**
+We use quarto docs for everything that we possibly can.
+They can combine prose and code and are therefore suitable for programmatic data analysis pipelines, as well as technical reports such as journal articles.
+We collaborate in teams at this point via GitHub.
+
+3. **Dissemination.**
+We publish a pre-print that includes links to the GitHub repo, as well as any other relevant links, such as OSF pages and any records of pre-registrations. 
+
+4. **Archive.**
+In addition to the GitHub repo, which is publically available, once the paper is accepted at a journal and/or we feel that we have enough peer-review feedback, we have started linking GitHub repos to Zenodo.
+Zenodo provides an independent and versioned archive via a DOI and can be easily linked to existing GitHub repos with minimal setup.
+
+## What comes next?
+
+Now that we have a birds eye view of the basic workflow, it is time to fill in a few more details.
+In the following six chapters, I briefly unpack some of the key themes that arise in almost any research project.
+I do this in the rough chronology of a research project, which starts from planning and runs to dissemination.

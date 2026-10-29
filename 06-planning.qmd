@@ -1,0 +1,183 @@
+# Planning {#sec-planning}
+
+::: {.callout-tip}
+## tl;dr
+
+Spend more time planning, and run fewer experiments [@scheelWhyHypothesisTesters2021; @gelman2024before].
+:::
+
+Planning is the part of the research process that gets surprisingly little attention in methods training in my view, given the impact that it has on everything else that follows. 
+It is more common for methods classes to focus on what to do once you have the data in hand.
+This is unfortunate because the decisions made before data collection regarding such things as research design, theory, hypotheses, methodology, sampling and analysis strategy constrain what can be reasonably claimed afterwards.
+
+And there's no need to take my word for it. 
+Andrew Gelman is a statistician who knows a fair bit about sophisticated statistical analyses, and yet he has this to say:
+
+
+"once the data have been collected, the most important decisions have already been done".
+
+ --- Andrew Gelman -@gelman2024before.
+
+Compared to the other chapters in this section, this chapter on planning feels the most diffuse, wide-ranging and impactful.
+The sheer number, depth and complexity of themes that seem like reasonable considerations could constitute a book in their own right.
+Set within this context, the best I can offer at this stage is to stress the importance of planning and the myriad forms that such planning might take [@scheelWhyHypothesisTesters2021].
+To this end, below I highlight some themes and decision spaces that we find ourselves in on a regular basis.
+These decision spaces are supposed to highlight the difficulties that we often face in planning studies, rather than to provide a neat set of solutions.
+
+Set within this context, each decision space outlined below typically prompts the recognition that much more reading is required before making any final decisions.
+Wider and deeper reading often also makes it clear that a collaboration with other colleagues may also be necessary.
+The planning process is not linear, but better represented as a cycle of many different conversations and considerations.
+It is also an iterative process, where each section can feed into and help inform other sections.
+A decision on whether to start a project, as well as how it should be designed, requires an overall assessment and integration of many different factors.
+I highlight some of these factors and associated questions in the subsections that follows.
+
+
+## Aims
+
+Aims and objectives should be clear and honest ^[What I mean by honest is that a particular theory is not retro-fitted onto the paper once the study has been completed, just because journal editors and reviewers demand "theory-driven research".].
+
+Here are some questions that we routinely ask ourselves:
+
+- What kind of research is being conducted, or what "mode" of science are you operating in? And what literature is being used to determine this?
+- Is it helpful to consider a continuum between exploratory and confirmatory research, and how is the distinction being operationalised [@feestMoreAccurateNotion2025]?
+- Are there particular parts of the project that are more or less exploratory or confirmatory? 
+- Is the work trying to generate hypotheses that can be tested in future research, or confirm clearly specified hypotheses? 
+- Is the work theory-driven or more focussed on observing and detecting phenomena?
+
+## Expectations
+
+We have conversations about likely expectations, given our current background knowledge of the literature and from running prior studies. 
+
+- What is the "Hollywood result" or best outcome that we could expect?
+- Are we happy if the results are suggestive at best, or inconclusive?
+- Can we run a simulation study to calibrate likely expectations [@heathcoteDynamicModelsChoice2019; @stevensonEMC2PackageCognitive2025]?
+- Can a multi-experiment approach mitigate the limits of a single experimental approach?
+
+## Feasibility
+
+We also routinely ask these questions about feasibility. 
+
+- What resources are available, in terms of money, people, equipment and time, to support the project?
+- Do we think the cost-benefit is worthwhile?
+- In terms of opportunity cost, what other projects could we run instead?
+- Can we afford to run multi-method or multi-experiment projects? 
+- Do we need to setup formal collaborations to deepen and broaden the scope of expertise in the project?
+
+## Theory 
+
+There is a lot to read about theory building in psychology and human neuroscience. 
+Good starting points include classics by Paul Meehl and Douglas Hintzman [@meehlTheoryTestingPsychologyPhysics1967; @meehlWhySummariesResearch1990; @meehlAppraisingAmendingTheories1990; @hintzmanWhyAreFormal1991].
+More recently, there was a special issue on theory [@proulxStatisticalRitualTheory2021] and many calls for how and why to build better theories in psychology [@oberauerAddressingTheoryCrisis2019; @devezerCaseFormalMethodology2021; @navarroIfMathematicalPsychology2020; @guestHowComputationalModeling2021; @guestWhatMakesGood2024].
+
+But, should all research be theory-driven? 
+Certainly not. 
+Keep in mind that non-theory driven research is fine too, and may actually be more suitable to the current research environment in psychology [@debrouwereConceptualCunningConclusive2022].
+
+If research is theory-driven, then some questions we routinely ask are:
+
+- What kind of theory is being used? 
+- What are the features that make it a "good" theory?
+- Where do hypotheses come from?
+- Does the theory make distinct predictions compared to other theories? 
+- Do formal, mathematical models of the theory exist that quantitative predictions can be derived from? 
+- Are the predictions ordinal, such that the prediction is that condition A > B, but the size of that difference is unspecified and irrelevant to the theoretical prediction? And does this matter?
+- Can the research design distinguish between predictions form different theories?
+- What are the current limits to theory?
+- Is there non-human animal evidence that supports the theory?
+
+## Design
+
+This introductory textbook is a fantastic resource for anyone who uses an experimental design in their research [experimtentology.io](https://experimentology.io/) [@frankExperimentology2025]. 
+I strongly recommend reading it from cover to cover before running your next experiment.
+
+## Measurement
+
+What evidence is there available that the measures that you intend to use are both reliable and valid?
+There is a surprising lack of effort spent on addressing these questions before running experiments [@scheelWhyHypothesisTesters2021; @flakeMeasurementSchmeasurementQuestionable2020].
+And many highly cited papers and associated tasks appear uninterpretable due to a lack validity and/or reliability [@higginsReadingMindEyes2022; @higginsReadingMindEyes2026; @husseyHiddenInvalidity152020; @kulpmannMethodologicalFlexibilityIowa2026].
+This state of affairs should be a concern for anyone and everyone who cares about research being useful.
+Therefore, before running a study, ask yourself one question: what evidence do you have to demonstrate that the measures you are using are reliable and valid?
+
+## Sampling
+
+There are many different ways to determine a sample size [@lakensSampleSizeJustification2022].
+And this table from Daniel Laken's paper nicely summarises some of the options (@tbl-lakens-justification).
+
+```{r}
+#| label: tbl-lakens-justification
+#| tbl-cap: "Types of justification for sample size decisions, and when each
+#|   applies. Adapted from Lakens (2022)."
+#| code-fold: true
+#| echo: false
+lakens_table <- tibble::tibble(
+  `Type of Justification` = c(
+    "Measure entire population",
+    "Resource constraints",
+    "Accuracy",
+    "A-priori power analysis",
+    "Heuristics",
+    "No justification"
+  ),
+  `When is this justification applicable?` = c(
+    "A researcher can specify the entire population, it is finite, and it is possible to measure (almost) every entity in the population.",
+    "Limited resources are the primary reason for the choice of the sample size a researcher can collect.",
+    "The research question focusses on the size of a parameter, and a researcher collects sufficient data to have an estimate with a desired level of accuracy.",
+    "The research question has the aim to test whether certain effect sizes can be statistically rejected with a desired statistical power.",
+    "A researcher decides upon the sample size based on a heuristic, general rule or norm that is described in the literature, or communicated orally.",
+    "A researcher has no reason to choose a specific sample size, or does not have a clearly specified inferential goal and wants to communicate this honestly."
+  )
+)
+
+tbl <- lakens_table |> knitr::kable(align = "ll")
+
+if (knitr::is_html_output()) {
+  tbl |>
+    kableExtra::kable_styling(
+      bootstrap_options = c("striped", "hover"),
+      full_width = TRUE
+    ) |>
+    kableExtra::column_spec(1, bold = TRUE, width = "25%") |>
+    kableExtra::column_spec(2, width = "75%")
+} else {
+  tbl
+}
+```
+
+Such considerations do not solely rely on determining the number of participants to test.
+They can also rely on the number of data points per participant [@bakerPowerContoursOptimising2021].
+Therefore, it is the number of observations in relation to your research design that matters.
+
+Given that we typically use multi-level models, which account for the nested structure within the data, off the shelf tools like [G\*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower) can only really be useful for a quick-and-dirty estimate.
+But they have limited value if a more realistic appreciation of data is desired.
+Instead, most often we find that simulation-based approaches are required.
+
+### Simulation 
+
+I have found the recent rise in popularity of data simulation approaches to be one of the biggest advantages to psychology and brain science research.
+I think it should become a core component of graduate training.
+
+There are many reasons to simulate data throughout different phases of a scientific project [@gelman2024before; @debruineUnderstandingMixedEffectsModels2021]. 
+Lisa DeBruine summarises these reasons in this [talk](https://debruine.github.io/talks/EMPSEB-fake-it-2023/#/title-slide).
+When planning a project, one may use simulation to determine a sample size. 
+Good examples include Solomon Kurz's blog [posts](https://solomonkurz.netlify.app/tags/power/), and Lisa Debruine's R package [faux{}](https://www.scienceverse.org/faux/) [@debruineUnderstandingMixedEffectsModels2021]. 
+In particular, the faux package [vignettes](https://www.scienceverse.org/faux/articles/) are excellent resources to get a foothold in the world of data simulation for planning purposes.
+I have also written up a worked example of planning via simulation in the context of education research, which outlines some key steps in the process (see this book [chapter](https://rich-ramsey.github.io/li-lab-workflow/01-planning.html); @RamseyliLabworkflow2026).
+
+## Pre-registration
+
+Lots has been written about the pros and cons of pre-registration [@krypotosPreregistrationDefinitionAdvantages2022; @p.simmonsPreregistrationWhyHow2021; @nosekPreregistrationHardWorthwhile2019].
+For instance, preregistation has several benefits built-in by design as it prevents p-hacking, HARKing, and publication bias, whilst also placing constraints on underpowered studies [@scheelExcessPositiveResults2021; @lakensBenefitsPreregistrationRegistered2024].
+But it is just one tool, and therefore it has a restrictive use case, which does not apply to all forms of science.
+
+My group has been routinely pre-registering experiments since 2017.
+In our experience, it fundamentally changes the conversation that team members have before running the study.
+The depth of discussion is qualitatively different if you have to address concrete and hard questions before you run the study, and you know that you will be accountable to those decisions after you get the data.
+
+It often forces a reckoning about the actual aims of the research and/or the resources available. 
+In many situations, during the process of drafting a pre-registration, it made us realise that we were not ready or able to run the experiment that we had initially conceived.
+So, we changed the project in substantial ways, or we simply didn't run the study at all.
+Overall, the process has been really beneficial in using resources more efficiently in our view.
+For more of my thoughts on pre-registration, see this book [chapter](https://rich-ramsey.github.io/li-lab-workflow/02-prereg.html) [@RamseyliLabworkflow2026].
+
+
+

@@ -1,0 +1,90 @@
+# What Done Looks Like {#sec-done}
+
+::: {.callout-tip}
+## tl;dr
+
+Science is **much** more than a static pdf article.
+:::
+
+Before getting into the details, it is worth being clear about what we are working towards.
+
+At the end of any research project involving data, there are a few things that, whenever possible, should exist in a usable state: the data, the code used to analyse it, and any other research materials that are needed to understand and reproduce what was done. 
+This is not a scientific argument. 
+It is closer to a basic obligation.
+
+Most psychological and brain science research is publicly funded. 
+The data collected, the analyses run, the findings reported were paid for by public money in the expectation that they would produce knowledge that is available to the public, to future researchers, to clinicians, to anyone with a legitimate interest. 
+Keeping those materials locked in a lab drive, or failing to document them well enough for anyone else to use them, is a failure of that obligation. 
+There can be legitimate exceptions to this obligation, such as in relation to participant privacy, commercial sensitivity, or genuine practical constraints, but they are fewer and further between than current practice implies [@chambersSevenDeadlySins2017].
+
+## Towards FAIRness 
+
+The FAIR principles — Findable, Accessible, Interoperable, Reusable — provide a useful shorthand for what "done" looks like [@wilkinsonFAIRGuidingPrinciples2016]. 
+They were developed initially for research data but apply equally to code and materials. 
+
+- **Findable**: data and materials have persistent identifiers (DOIs), are deposited in searchable repositories, and are described with sufficient metadata that someone could locate them without already knowing they exist.
+- **Accessible**: they can actually be retrieved without being behind a login, or on a personal hard drive, or "available on request" in a footnote.
+- **Interoperable**: they use open, standard formats where possible. 
+A `.csv` rather than a proprietary spreadsheet format. 
+Plain text rather than a binary file. 
+Code that does not require a paid licence to run.
+- **Reusable**: they are documented well enough that someone who was not involved in the project could understand what they are, what they represent, and how to use them.
+
+FAIR principles are not binary.
+Research materials can be more or less FAIR. 
+The goal is not about obtaining instant perfection, but being clear-eyed about the target vision. 
+Every decision about how to structure a dataset, name a variable, or document a pipeline should be made with FAIR in mind as the endpoint. 
+In that sense, FAIR acts as a destination that can guide behaviour.
+
+The rest of this book represents one practical answer to the question that FAIR raises: how do you actually get there? 
+Version control, data management plans, reproducible analysis pipelines are not ends in themselves. 
+They are the infrastructure that makes FAIR more easily achievable without heroic effort at the end of a project.
+
+The common mistake is to treat data sharing and documentation as a final step, which is done after the paper is accepted for publications at a journal. 
+By that point, the data are messy in ways that are hard to unpick, the code is undocumented, the decisions that were made along the way have been forgotten.
+FAIR has to be baked in from the start, not retrofitted at the end.
+
+You can think about it like baking a cake.
+The cake you want is a FAIR, documented, reproducible record of what you did and found. 
+Everything that follows in this book is about how to bake it.
+And after baking it once, you can more easily adapt and improve the recipe for future use.
+
+## "Done" can be fluid, rather than static
+
+There is a tempting but mistaken idea that making your work open and reproducible is something you do at the end of a project as a final administrative step before moving on. 
+Upload the data, share the code, tick the box. 
+This framing treats a research output as a static artifact, like a paper in print. 
+Once it exists, you cannot update it.
+
+The infrastructure described in the chapters that follow makes a different model possible. 
+A dataset lives in a version-controlled repository. 
+A codebook is a text file with a commit history. 
+A Zenodo deposit can have multiple versions, each with its own DOI, each traceable to a specific state of the project at a specific point in time. 
+When someone finds a typo in a variable label, you fix it and commit. 
+When a preprocessing error is identified after publication, you correct it, document what changed and why, and release a new version. 
+The record of what happened is preserved. 
+The current best version is available.
+
+This is closer to how software is maintained than how academic papers are typically published. 
+It requires a shift in how you think about a research output.
+Rather than a document that is finished, it is a project that is responsibly maintained. 
+The overhead is low if the infrastructure is in place from the start. 
+It is considerable if you are trying to retrofit it two years after data collection ended.
+None of this means a research project has no natural endpoint. 
+It means that an endpoint is better understood as "in good enough shape that someone else could take it from here", rather than as "submitted and never touched again."
+
+## Practical starting points
+
+A few concrete steps that cost relatively little but move significantly towards FAIR:
+
+- Choose a repository before you start collecting data (GitHub, OSF, Zenodo, institutional repository) and create a project there.
+- Write a brief data management plan before data collection begins.
+- Use open file formats from the start.
+- Supply data dictionaries alongside data files.
+- Write a comprehensive README file for every project.
+- Decide on a licence for your data and code (e.g., CC-BY, MIT).
+
+None of these are technically demanding. 
+They are habits.
+The chapters that follow describe how we have tried to build those habits into the normal rhythm of running a project.
+

@@ -1,0 +1,16 @@
+# Introduction {#sec-introduction}
+
+::: {.content-visible when-format="html"}
+
+Part 1 provides relevant context to help understand what motivates the book.
+
+## Chapters
+
+In this part of the book, there are four chapters, which cover the following topics.
+
+- The unrealised potential of psychology and neuroscience research (@sec-mind-brain).
+- A brief history of verification in science (@sec-history).
+- What the endpoint of a research project might look like (@sec-done).
+- Domain-general software tools that provide a foundational infrastructure for science (@sec-infrastructure).
+
+:::

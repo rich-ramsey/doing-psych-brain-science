@@ -1,0 +1,111 @@
+# Preface {.unnumbered}
+
+This book has one fundamental premise. 
+The foundations of scientific claims should be easy to access and verify.
+This is not just about promoting trust between scientists to help build on past research effectively. 
+It also stems from a moral obligation.
+Most modern science is publicly funded, and therefore it should be available to serve the public.
+
+Of course, the need to verify the foundations for other scientist's claims is far from a new problem.
+For centuries (or longer) scientists have been confronted with this problem.
+This book just takes a snapshot of how modern tools can be arranged into a workflow to address it.
+
+What follows is not a suggestion that this workflow is "correct" in any meaningful way. 
+It is just one concrete template of a workflow that gets closer to a reality where we can meet the fundamental challenge that our work can be easy to access and verify.
+As such, this book is a field report on current scientific workflows from an active cognitive neuroscience lab. 
+It is not a manifesto for change or a best-practice manual.
+
+## Who is this book for
+
+This book is primarily written for future me (so I don't forget), as well as for people in my group and for collaborators. 
+The hope is that it replaces conversations that tend to happen repeatedly as new people join a project. 
+Such conversations are necessary but hard to scale, and people cannot reasonably retain everything instantly. 
+
+Of course, other psychology or brain science researchers may find it useful too.
+At the broadest level, given that the fundamentals apply to ***any*** quantitative project, folks in wider domains of behavioural science, medicine, biology, and neuroscience might be interested too. 
+Ultimately, the book is situated in psychological and brain science research, since that is what I am familiar with.
+
+## Prerequisites
+
+- No prior material understanding of psychology or cognitive neuroscience is required: it is the principles and infrastructure that matters most, rather than domain-specific topics or methods. 
+- Basic programming skills in R (or another language).
+- Familiarity with the basic aims of common data analysis and statistical approaches. 
+- Some basic sense of common research designs, such as experimental vs. cross-sectional designs.
+- An understanding that much of psychology and cognitive neuroscience research involves data collected from human participants.
+
+## Basic structure 
+
+After introductory chapters, which provide relevant historical context and general aims and scope, the book follows the rough chronology of a research project — from the initial commitment to make your work findable and reusable, through planning, data management, processing, visualisation, and analysis, to dissemination. 
+The infrastructure that holds all of this together (code, version control, reproducible pipelines) gets its own chapter early on, because without it the rest is harder.
+Each chapter is short by design. 
+The goal is to be clear about what we do and not to be comprehensive.
+Where others have written better and more technical accounts of a particular topic, I point to them and move on.
+
+## Themes
+
+There are two broad themes that intersect across the book.
+
+**Theme 1:** Domain-general software tools that are likely to be relevant for ***any*** scientific project.
+
+**Theme 2:** A scienfitic workflow for research projects in psychology, neuroscience and related disciplines.
+
+
+## What this book is not
+
+This book is not:
+
+- A psychology or cognitive neuroscience textbook.
+Therefore, it does not cover core topics, methods or controversies in cognitive neuroscience.
+- An attempt to describe or prescribe "best-practice" in any sense. 
+Instead, the book just reflects current and ongoing practice in one lab.
+Therefore, it reflects a specific stack of tools, practices, and choices that have accumulated in one lab over one particular period. 
+Other labs may have made different choices for good and/or bad reasons.
+- A manifesto for "open science" in the sense of supporting or advocating for an organised movement associated with open science practices.
+- A "how-to" guide with tutorials on specific implementation. 
+
+## A note on tools
+
+Where specific tools are mentioned (e.g., R, brms, Stan, Git, OSF, Docker, Zenodo), keep in mind that these reflect what we currently use, not what we think everyone should use. 
+The underlying principles of reproducibility, transparency, and clear uncertainty quantification are the point. 
+The tools are one implementation of those principles.
+
+## How should you read this book?
+
+Ideally, the book is intended to be read linearly, as the chapters do build on each other.
+And the later chapters may be easier to digest and understand if you understand the basic aims and setup.
+However, each chapter is largely self-contained and can be read in isolation.
+Therefore, if there is a particular topic that you want to focus on, then just go straight to that chapter.
+
+## Living document and updates
+
+The book is intended to be a living document, which changes as things change in scientific workflows.
+Therefore, substantial updates will be released and versioned accordingly.
+
+## Disclaimers 
+
+I am not a software engineer and I have no formal training in this domain.
+My training is in experimental psychology and cognitive neuroscience.
+The purpose of this book is to provide a practical example of a current scientific workflow based on my training and perspective as an active researcher.
+Therefore, in the sections on infrastructure and software, I will discuss tools that I use, rather than develop myself.
+This means that I am very much a beginner in the software space and I use these tools out of what I perceive to be a necessary condition of doing modern science.
+
+## Acknowledgements
+
+## License and citation
+
+© Rich Ramsey, ETH Zürich. Licensed under 
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+```{r}
+#| eval: false
+
+@book{RamseyDoingPsychBrainScience2026,
+  title = {Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows},
+  author = {Ramsey, Richard},
+  year = {2026},
+  month = {1},
+  edition = {version 0.1},
+  url = {},
+  doi = {}
+}
+```

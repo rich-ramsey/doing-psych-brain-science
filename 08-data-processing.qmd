@@ -1,0 +1,190 @@
+# Data Processing {#sec-data-processing}
+
+::: {.callout-tip}
+## tl;dr
+
+Learn to love [tidy data](https://tidyr.tidyverse.org/articles/tidy-data.html) and the [tidyverse](https://tidyverse.org/) [@wickhamDataScience2023]
+:::
+
+Data processing, which typically involves re-shaping and cleaning data, is where most of the actual work happens and where methods sections can fall somewhat silent. 
+A typical paper will describe the design in detail and the statistical model at length, and then dispose of everything in between with a far briefer set of notes and rest on allusions to "standard preprocessing." 
+This is where decisions that can affect the results are made.
+And it is therefore fundamental that these steps are made explicit via code and easy to reproduce.
+
+Here I do not focus on specific decisions, such as setting exclusion criteria. 
+Instead, I want to focus on the more general aspects of our chosen workflow.
+
+## A reproducible analysis pipeline
+
+Analysis code should be a record of decisions, not just the instructions for a computer.
+Quarto documents, therefore, by mixing code and prose, can be a useful ally by serving as a processing notebook.
+
+The raw-to-processed pipeline should be fully reproducible from a script.
+This means that you, or anyone else in theory, could reproduce the analysis steps at any point in time.
+And it means that any changes to analysis decisions can be easily made with the consequent changes to data and figures easily implemented.
+
+## The "tidy" data format
+
+[Tidy data](https://tidyr.tidyverse.org/articles/tidy-data.html) is long format data rather than wide format data. 
+This means one observation is recorded per row of a data structure. 
+We find this helpful for many reasons:
+
+1. It makes data visualisation easy and natural in ggplot2 [see @sec-data-visualisation].
+2. The structure is suitable for fitting multi-level regression models, which is our default approach to inferential modelling.
+3. Team members (and anyone else) can expect and understand a certain data format, which aids collaboration, peer-review and ease of re-use. 
+4. If another format is required, we like the idea that one default version is in the tidy, long format.
+5. Summary data can easily be calculated in variety of forms.
+
+## The ease of "dplyr" commands
+
+My feelings about using R + Tidyverse tools for data science is nicely summarised in this [post](https://borkar.substack.com/p/unlocking-zen-powerful-analytics) by Amol Borkar.
+
+More specifically, I like using dplyr verbs for at least four reasons.
+
+1. The syntax is easy to understand and relies on a small set of verbs.
+2. They can be piped into a chain and easily commented.
+3. They are designed to naturally integrate with data visualisation via ggplot2.
+4. They fit nicely into a functional programming approach, which makes it easy to write compact loops.
+
+In the following subsections, I outline each of these benefits in a little more detail.
+
+### (1) Syntax for common dplyr verbs {.unnumbered}
+
+```{r}
+#| label: tbl-dplyr-verbs
+#| tbl-cap: "Core dplyr verbs and their purpose"
+#| echo: false
+#| message: false
+#| warning: false
+verbs <- data.frame(
+  Verb = c(
+    "`filter()`",
+    "`select()`",
+    "`mutate()`",
+    "`summarise()`",
+    "`arrange()`",
+    "`group_by()`",
+    "`rename()`",
+    "`distinct()`",
+    "`count()`",
+    "`left_join()`"
+  ),
+  Purpose = c(
+    "Keep rows matching a condition",
+    "Keep or drop columns by name",
+    "Create or transform columns",
+    "Collapse rows to summary statistics",
+    "Sort rows by one or more columns",
+    "Define groups for subsequent operations",
+    "Rename columns",
+    "Keep unique rows",
+    "Count observations by group",
+    "Join two data frames by a key column"
+  ),
+  Example = c(
+    "`filter(rt > 200)`",
+    "`select(id, condition, rt)`",
+    "`mutate(log_rt = log(rt))`",
+    "`summarise(mean_rt = mean(rt))`",
+    "`arrange(desc(rt))`",
+    "`group_by(participant, condition)`",
+    "`rename(response_time = rt)`",
+    "`distinct(participant)`",
+    "`count(condition)`",
+    "`left_join(data, demo, by = 'id')`"
+  )
+)
+
+tbl <- verbs |>
+  knitr::kable(col.names = c("Verb", "Purpose", "Example"))
+
+if (knitr::is_html_output()) {
+  tbl |>
+    kableExtra::kable_styling(
+      bootstrap_options = c("striped", "hover", "bordered"),
+      full_width = TRUE,
+      font_size = 14
+    ) |>
+    kableExtra::column_spec(1, monospace = TRUE) |>
+    kableExtra::column_spec(3, monospace = TRUE)
+} else {
+  tbl
+}
+```
+
+### (2) Piping verbs together {.unnumbered}
+
+The real power of dplyr is chaining verbs with the pipe operator (`|>`).
+Each step reads as a plain-English instruction, and comments make the intent explicit.
+
+```{r}
+#| label: dplyr-pipeline
+#| echo: true
+#| code-fold: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(palmerpenguins)
+
+# Start with the penguins dataset
+penguins |>
+  # Remove rows with missing values in key columns
+  filter(!is.na(bill_length_mm), !is.na(body_mass_g)) |>
+  # Keep only the columns we need
+  select(species, island, bill_length_mm, body_mass_g, sex) |>
+  # Create a new column: body mass in kg
+  mutate(body_mass_kg = body_mass_g / 1000) |>
+  # Group by species and sex
+  group_by(species, sex) |>
+  # Summarise to get mean bill length and body mass per group
+  summarise(
+    n = n(),
+    mean_bill = mean(bill_length_mm),
+    mean_mass = mean(body_mass_kg),
+    .groups = "drop"
+  ) |>
+  # Sort by mean bill length, descending
+  arrange(desc(mean_bill))
+```
+
+The pipeline above is a readable record of every data transformation decision.
+Each step is independently understandable, and the comments make it easy to return to six months later.
+
+### (3) Seamless integration with ggplot2 {.unnumbered}
+
+Because dplyr and ggplot2 share the same data grammar, a pipeline can flow directly into a plot.
+
+```{r}
+#| label: fig-rt-plot
+#| fig-cap: "Bill length by species and sex in the Palmer Penguins dataset. Points show individual observations; error bars show 95% confidence intervals."
+#| code-fold: false
+#| message: false
+#| warning: false
+#| echo: true
+# Start with the penguins dataset
+penguins |>
+  # Remove rows where sex is missing
+  filter(!is.na(sex)) |>
+  # Map species to x-axis, bill length to y-axis, colour by sex
+  ggplot(aes(x = species, y = bill_length_mm, colour = sex)) +
+  # Plot individual observations, jittered slightly to reduce overplotting
+  geom_jitter(width = 0.05, alpha = 0.4, size = 1.5) +
+  # Human-readable axis and legend labels
+  labs(
+    title = "Penguin bill length by sex and species",
+    x = "Species",
+    y = "Bill length (mm)",
+    colour = "Sex"
+  ) +
+  # Clean minimal theme with base font size 13
+  theme_minimal(base_size = 13)
+```
+
+The pipeline from raw data to final figure is a single unbroken chain.
+The wrangling and the visualisation are in one place, which means the figure is always reproducible from the data without any intermediate steps that could be lost or forgotten.
+
+### (4) Functional programming {.unnumbered}
+
+Functional programming is a compact way to avoid writing step-by-step loops.
+For more information, see this [talk](https://www.youtube.com/watch?v=rz3_FDVt9eg) by Hadley Wickham and this [vignette](https://purrr.tidyverse.org/articles/purrr.html) of the tidyverse purrr package.
+We find it helpful to think about data wrangling in this way, and we suspect it reduces the number of bugs in our code.

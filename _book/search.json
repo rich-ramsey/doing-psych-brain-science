@@ -1,0 +1,777 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "",
+    "text": "Preface\nThis book has one fundamental premise. The foundations of scientific claims should be easy to access and verify. This is not just about promoting trust between scientists to help build on past research effectively. It also stems from a moral obligation. Most modern science is publicly funded, and therefore it should be available to serve the public.\nOf course, the need to verify the foundations for other scientist’s claims is far from a new problem. For centuries (or longer) scientists have been confronted with this problem. This book just takes a snapshot of how modern tools can be arranged into a workflow to address it.\nWhat follows is not a suggestion that this workflow is “correct” in any meaningful way. It is just one concrete template of a workflow that gets closer to a reality where we can meet the fundamental challenge that our work can be easy to access and verify. As such, this book is a field report on current scientific workflows from an active cognitive neuroscience lab. It is not a manifesto for change or a best-practice manual.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#who-is-this-book-for",
+    "href": "index.html#who-is-this-book-for",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Who is this book for",
+    "text": "Who is this book for\nThis book is primarily written for future me (so I don’t forget), as well as for people in my group and for collaborators. The hope is that it replaces conversations that tend to happen repeatedly as new people join a project. Such conversations are necessary but hard to scale, and people cannot reasonably retain everything instantly.\nOf course, other psychology or brain science researchers may find it useful too. At the broadest level, given that the fundamentals apply to any quantitative project, folks in wider domains of behavioural science, medicine, biology, and neuroscience might be interested too. Ultimately, the book is situated in psychological and brain science research, since that is what I am familiar with.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nNo prior material understanding of psychology or cognitive neuroscience is required: it is the principles and infrastructure that matters most, rather than domain-specific topics or methods.\nBasic programming skills in R (or another language).\nFamiliarity with the basic aims of common data analysis and statistical approaches.\nSome basic sense of common research designs, such as experimental vs. cross-sectional designs.\nAn understanding that much of psychology and cognitive neuroscience research involves data collected from human participants.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#basic-structure",
+    "href": "index.html#basic-structure",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Basic structure",
+    "text": "Basic structure\nAfter introductory chapters, which provide relevant historical context and general aims and scope, the book follows the rough chronology of a research project — from the initial commitment to make your work findable and reusable, through planning, data management, processing, visualisation, and analysis, to dissemination. The infrastructure that holds all of this together (code, version control, reproducible pipelines) gets its own chapter early on, because without it the rest is harder. Each chapter is short by design. The goal is to be clear about what we do and not to be comprehensive. Where others have written better and more technical accounts of a particular topic, I point to them and move on.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#themes",
+    "href": "index.html#themes",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Themes",
+    "text": "Themes\nThere are two broad themes that intersect across the book.\nTheme 1: Domain-general software tools that are likely to be relevant for any scientific project.\nTheme 2: A scienfitic workflow for research projects in psychology, neuroscience and related disciplines.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#what-this-book-is-not",
+    "href": "index.html#what-this-book-is-not",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "What this book is not",
+    "text": "What this book is not\nThis book is not:\n\nA psychology or cognitive neuroscience textbook. Therefore, it does not cover core topics, methods or controversies in cognitive neuroscience.\nAn attempt to describe or prescribe “best-practice” in any sense. Instead, the book just reflects current and ongoing practice in one lab. Therefore, it reflects a specific stack of tools, practices, and choices that have accumulated in one lab over one particular period. Other labs may have made different choices for good and/or bad reasons.\nA manifesto for “open science” in the sense of supporting or advocating for an organised movement associated with open science practices.\nA “how-to” guide with tutorials on specific implementation.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#a-note-on-tools",
+    "href": "index.html#a-note-on-tools",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "A note on tools",
+    "text": "A note on tools\nWhere specific tools are mentioned (e.g., R, brms, Stan, Git, OSF, Docker, Zenodo), keep in mind that these reflect what we currently use, not what we think everyone should use. The underlying principles of reproducibility, transparency, and clear uncertainty quantification are the point. The tools are one implementation of those principles.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-should-you-read-this-book",
+    "href": "index.html#how-should-you-read-this-book",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "How should you read this book?",
+    "text": "How should you read this book?\nIdeally, the book is intended to be read linearly, as the chapters do build on each other. And the later chapters may be easier to digest and understand if you understand the basic aims and setup. However, each chapter is largely self-contained and can be read in isolation. Therefore, if there is a particular topic that you want to focus on, then just go straight to that chapter.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#living-document-and-updates",
+    "href": "index.html#living-document-and-updates",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Living document and updates",
+    "text": "Living document and updates\nThe book is intended to be a living document, which changes as things change in scientific workflows. Therefore, substantial updates will be released and versioned accordingly.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#disclaimers",
+    "href": "index.html#disclaimers",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Disclaimers",
+    "text": "Disclaimers\nI am not a software engineer and I have no formal training in this domain. My training is in experimental psychology and cognitive neuroscience. The purpose of this book is to provide a practical example of a current scientific workflow based on my training and perspective as an active researcher. Therefore, in the sections on infrastructure and software, I will discuss tools that I use, rather than develop myself. This means that I am very much a beginner in the software space and I use these tools out of what I perceive to be a necessary condition of doing modern science.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#license-and-citation",
+    "href": "index.html#license-and-citation",
+    "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
+    "section": "License and citation",
+    "text": "License and citation\n© Rich Ramsey, ETH Zürich. Licensed under CC BY 4.0.\n\n\nCode\n@book{RamseyDoingPsychBrainScience2026,\n  title = {Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows},\n  author = {Ramsey, Richard},\n  year = {2026},\n  month = {1},\n  edition = {version 0.1},\n  url = {},\n  doi = {}\n}",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Chapters\nPart 1 provides relevant context to help understand what motivates the book.\nIn this part of the book, there are four chapters, which cover the following topics.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "intro.html#chapters",
+    "href": "intro.html#chapters",
+    "title": "Introduction",
+    "section": "",
+    "text": "The unrealised potential of psychology and neuroscience research (What’s in your head?).\nA brief history of verification in science (Historical context).\nWhat the endpoint of a research project might look like (What Done Looks Like).\nDomain-general software tools that provide a foundational infrastructure for science (Infrastructure).",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "01-mind-brain.html",
+    "href": "01-mind-brain.html",
+    "title": "What’s in your head?",
+    "section": "",
+    "text": "Research materials are not routinely verified\nI remember taking a final year undergraduate class on neuropsychology and being utterly fascinated. The brain controlled movements, breathing, social interactions, disease, disorder, rehabilitation, expertise, and on and on. How could one not be fascinated?\nThe potential seemed enormous. It immediately made me want to do a PhD in a related field. If only we could understand cognitive and brain “mechanisms” better, then all manner of possibilities and opportunities might open up to understand how humans experience in the world. And that genuine level of excitement about the potential of psychological and brain science research feels about as right today as it did back then in 2003.\nBut, how are research findings in relation to mental processes verified? How would we know if conclusions and subsequent societal decisions were based on solid foundations? A layperson may expect that a dispassionate, sober, professional, careful and “scientific” process exists for verifying scientific research. And they would be wrong. And that is a big problem.\nFor the vast majority of research reports in academic journals, the underlying research materials, such as data and code, are not available to anyone else to verify. This is because they were simply never shared in the first place. Even the academics who peer-review the work at the request of a journal, and who make a formal recommendation about the quality of the research, do not typically get access to these materials. Instead, all the reviewers see is a static pdf document and nothing else.\nSometimes data and code are made “available on request”. But, when these materials are formally requested they are often not provided (Hussey, 2025). And in many cases, the written report is hidden behind paywalls and only available via subscription, which excludes many institutions and the public from access. In response, there have been some recent changes in culture and expectations that have led to more sharing of data and code (Wilkinson et al., 2016), but this comes from a very low base and without widespread formal training or standardisation.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What's in your head?</span>"
+    ]
+  },
+  {
+    "objectID": "01-mind-brain.html#towards-realising-potential",
+    "href": "01-mind-brain.html#towards-realising-potential",
+    "title": "What’s in your head?",
+    "section": "Towards realising potential",
+    "text": "Towards realising potential\nIf we want to realise the potential of cognitive and brain science, one that seeks credibility and legitimacy to impact society, then a more professional approach to the fundamental importance of verification is required. If these fundamentals are not achieved (or even strived for in a meaningful manner) then one might ask: What’s the point of doing the research in the first place? For example, if research cannot be accessed or used by other professional scientists easily and reliably, then what chance is there of making genuine societal impact in the domains of health, education or public policy? I agree with others that the chances are close to zero (Arslan, 2026).\n\n\n\n\n\n\nArslan, R. (2026, April 13). Science needs downvotes. The 100% CI. https://www.the100.ci/2026/04/13/science-needs-downvotes/\n\n\nHussey, I. (2025). Data is not available upon request. Meta-Psychology, 9. https://doi.org/10.15626/MP.2023.4008\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3(1, 1), 160018. https://doi.org/10.1038/sdata.2016.18",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What's in your head?</span>"
+    ]
+  },
+  {
+    "objectID": "02-history.html",
+    "href": "02-history.html",
+    "title": "Historical context",
+    "section": "",
+    "text": "The emergence of the Royal Society (1600s)\nThe desire to check others’ research is an old endeavour. And it is not easy to do. Producing trustworthy scientific material is hard in any domain. Making that material easily accessible and verifiable complicates matters further. And widespread access to tools that make this easier are relatively new. Indeed, the notion of science as practicing amateur software development is a reasonably new possibility in the scheme of the history of science. To make this concrete, let’s look at a few moments in history.\nThe motto of the UK’s Royal Society (founded in 1662), is ‘nullius in verba’, which means ‘take nobody’s word for it’. And indeed, in 1679, Edmond Halley travelled to Poland along with his own equipment to verify the observations made by Johannes Hevelius (Jones, 1957). This would have been costly, in terms of time and money, but clearly underscores the value placed on verification. But the world and science was not as widespread or as interconnected as it is now.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Historical context</span>"
+    ]
+  },
+  {
+    "objectID": "02-history.html#the-industrial-publishing-complex-1950s-onwards",
+    "href": "02-history.html#the-industrial-publishing-complex-1950s-onwards",
+    "title": "Historical context",
+    "section": "The Industrial Publishing Complex (1950s onwards)",
+    "text": "The Industrial Publishing Complex (1950s onwards)\nFrom at least the 1950s onwards, academic publishing changed dramatically in pace, scale and reach with a proliferation of journals, institutions and people working as professional academics all over the world. But, prior to the mass availability of the internet, sharing research materials would have remained difficult and expensive. And responsibilities were unclear and/or unspecified. For example, should the journal host all raw materials and share them upon request from others? And who would pay for any or all of this? As such, before the internet revolution changed things, there were legitimate practical barriers to sharing materials.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Historical context</span>"
+    ]
+  },
+  {
+    "objectID": "02-history.html#my-phd-days-2004-2007",
+    "href": "02-history.html#my-phd-days-2004-2007",
+    "title": "Historical context",
+    "section": "My PhD days (2004-2007)",
+    "text": "My PhD days (2004-2007)\nEven when I did my PhD, in an era when the internet was very much widespread, the idea that raw data or code would be submitted alongside a journal submission was largely unheard of in disciplines associated with psychology and neuroscience. As an illustrative example of the times, as I prepared my very first journal article submission, I burned the raw data to a DVD (young people, see here). In the next meeting with my supervisors, I placed the DVD in a jiffy bag and asked: do I address this to the Editor-in-Chief and send it to the journal’s mailing address? My supervisors laughed out loud. They then mentioned that they had heard about journals doing “data audits” before, but they didn’t happen very often, and they had never been audited yet.\nAs a young trainee scientist, I was genuinely shocked that nobody else, other than my coauthors, would check the data. And even then, it was certainly not routine for co-authors to go through the data and analysis steps with a fine tooth comb. To be clear, I was very lucky to have such supportive, involved and generous supervisors. My observation is simply that there was a complete absence of industry standard on sharing research materials. Even in my naive researcher state, it was clear to me that this was not how science should be conducted. And it was also obvious that this was not how the public expected science to operate when spending taxpayer’s money.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Historical context</span>"
+    ]
+  },
+  {
+    "objectID": "02-history.html#towards-born-open-science-2015-onwards",
+    "href": "02-history.html#towards-born-open-science-2015-onwards",
+    "title": "Historical context",
+    "section": "Towards “born open” science (2015 onwards)",
+    "text": "Towards “born open” science (2015 onwards)\nAs we move towards the present day, attitudes are slowly shifting. Instead of a static pdf document being the sole “product” of a scientific project, more and more actors - spanning individuals, journals, funding agencies and learned societies - recognise that the written report is merely window dressing for everything else that supports the claims being made, such as data, code and experimental materials (Buckheit & Donoho, 1995; Donoho, 2010). The challenge now is to build workflows that can deliver in response to this challenge. What might that such a workflow look like, in terms of infrastructure in general and in terms of research workflows in cognitive neuroscience? That is what this book addresses, but from the perspective of one lab.\n\n\n\n\n\n\nBuckheit, J. B., & Donoho, D. L. (1995). WaveLab and Reproducible Research. In A. Antoniadis & G. Oppenheim (Eds.), Wavelets and Statistics (Vol. 103, pp. 55–81). Springer New York. https://doi.org/10.1007/978-1-4612-2544-7_5\n\n\nDonoho, D. L. (2010). An invitation to reproducible computational research. Biostatistics, 11(3), 385–388. https://doi.org/10.1093/biostatistics/kxq028\n\n\nJones, H. S. (1957). Halley as an Astronomer. Notes and Records of the Royal Society of London, 12(2), 175–192. https://www.jstor.org/stable/530833",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Historical context</span>"
+    ]
+  },
+  {
+    "objectID": "03-done.html",
+    "href": "03-done.html",
+    "title": "What Done Looks Like",
+    "section": "",
+    "text": "Towards FAIRness\nBefore getting into the details, it is worth being clear about what we are working towards.\nAt the end of any research project involving data, there are a few things that, whenever possible, should exist in a usable state: the data, the code used to analyse it, and any other research materials that are needed to understand and reproduce what was done. This is not a scientific argument. It is closer to a basic obligation.\nMost psychological and brain science research is publicly funded. The data collected, the analyses run, the findings reported were paid for by public money in the expectation that they would produce knowledge that is available to the public, to future researchers, to clinicians, to anyone with a legitimate interest. Keeping those materials locked in a lab drive, or failing to document them well enough for anyone else to use them, is a failure of that obligation. There can be legitimate exceptions to this obligation, such as in relation to participant privacy, commercial sensitivity, or genuine practical constraints, but they are fewer and further between than current practice implies (Chambers, 2017).\nThe FAIR principles — Findable, Accessible, Interoperable, Reusable — provide a useful shorthand for what “done” looks like (Wilkinson et al., 2016). They were developed initially for research data but apply equally to code and materials.\nFAIR principles are not binary. Research materials can be more or less FAIR. The goal is not about obtaining instant perfection, but being clear-eyed about the target vision. Every decision about how to structure a dataset, name a variable, or document a pipeline should be made with FAIR in mind as the endpoint. In that sense, FAIR acts as a destination that can guide behaviour.\nThe rest of this book represents one practical answer to the question that FAIR raises: how do you actually get there? Version control, data management plans, reproducible analysis pipelines are not ends in themselves. They are the infrastructure that makes FAIR more easily achievable without heroic effort at the end of a project.\nThe common mistake is to treat data sharing and documentation as a final step, which is done after the paper is accepted for publications at a journal. By that point, the data are messy in ways that are hard to unpick, the code is undocumented, the decisions that were made along the way have been forgotten. FAIR has to be baked in from the start, not retrofitted at the end.\nYou can think about it like baking a cake. The cake you want is a FAIR, documented, reproducible record of what you did and found. Everything that follows in this book is about how to bake it. And after baking it once, you can more easily adapt and improve the recipe for future use.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What Done Looks Like</span>"
+    ]
+  },
+  {
+    "objectID": "03-done.html#towards-fairness",
+    "href": "03-done.html#towards-fairness",
+    "title": "What Done Looks Like",
+    "section": "",
+    "text": "Findable: data and materials have persistent identifiers (DOIs), are deposited in searchable repositories, and are described with sufficient metadata that someone could locate them without already knowing they exist.\nAccessible: they can actually be retrieved without being behind a login, or on a personal hard drive, or “available on request” in a footnote.\nInteroperable: they use open, standard formats where possible. A .csv rather than a proprietary spreadsheet format. Plain text rather than a binary file. Code that does not require a paid licence to run.\nReusable: they are documented well enough that someone who was not involved in the project could understand what they are, what they represent, and how to use them.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What Done Looks Like</span>"
+    ]
+  },
+  {
+    "objectID": "03-done.html#done-can-be-fluid-rather-than-static",
+    "href": "03-done.html#done-can-be-fluid-rather-than-static",
+    "title": "What Done Looks Like",
+    "section": "“Done” can be fluid, rather than static",
+    "text": "“Done” can be fluid, rather than static\nThere is a tempting but mistaken idea that making your work open and reproducible is something you do at the end of a project as a final administrative step before moving on. Upload the data, share the code, tick the box. This framing treats a research output as a static artifact, like a paper in print. Once it exists, you cannot update it.\nThe infrastructure described in the chapters that follow makes a different model possible. A dataset lives in a version-controlled repository. A codebook is a text file with a commit history. A Zenodo deposit can have multiple versions, each with its own DOI, each traceable to a specific state of the project at a specific point in time. When someone finds a typo in a variable label, you fix it and commit. When a preprocessing error is identified after publication, you correct it, document what changed and why, and release a new version. The record of what happened is preserved. The current best version is available.\nThis is closer to how software is maintained than how academic papers are typically published. It requires a shift in how you think about a research output. Rather than a document that is finished, it is a project that is responsibly maintained. The overhead is low if the infrastructure is in place from the start. It is considerable if you are trying to retrofit it two years after data collection ended. None of this means a research project has no natural endpoint. It means that an endpoint is better understood as “in good enough shape that someone else could take it from here”, rather than as “submitted and never touched again.”",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What Done Looks Like</span>"
+    ]
+  },
+  {
+    "objectID": "03-done.html#practical-starting-points",
+    "href": "03-done.html#practical-starting-points",
+    "title": "What Done Looks Like",
+    "section": "Practical starting points",
+    "text": "Practical starting points\nA few concrete steps that cost relatively little but move significantly towards FAIR:\n\nChoose a repository before you start collecting data (GitHub, OSF, Zenodo, institutional repository) and create a project there.\nWrite a brief data management plan before data collection begins.\nUse open file formats from the start.\nSupply data dictionaries alongside data files.\nWrite a comprehensive README file for every project.\nDecide on a licence for your data and code (e.g., CC-BY, MIT).\n\nNone of these are technically demanding. They are habits. The chapters that follow describe how we have tried to build those habits into the normal rhythm of running a project.\n\n\n\n\n\n\nChambers, C. D. (2017). The Seven Deadly Sins of Psychology: A Manifesto for Reforming the Culture of Scientific Practice. Princeton University Press.\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3(1, 1), 160018. https://doi.org/10.1038/sdata.2016.18",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>What Done Looks Like</span>"
+    ]
+  },
+  {
+    "objectID": "04-infrastructure.html",
+    "href": "04-infrastructure.html",
+    "title": "Infrastructure",
+    "section": "",
+    "text": "Why borrow from software engineering?\nThis chapter covers the general-purpose tools that make everything else in the workflow possible. These tools are taken from software engineering practices and turn a collection of scripts into something that works reliably and that someone else (or future you) can understand.\nThe tools described here were not developed for science. They were developed by software engineers to solve related problems: how do you write code that works, that can be modified without breaking everything, that multiple people can work on simultaneously, and that you can return to six months later and still understand? These are exactly the problems a research lab faces with data and analysis code. The solutions transfer almost directly. This is a big area, which I do not attempt to cover in any great detail. Instead, in Basic infrastructure below, I highlight three key aspects of infrastructure.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Infrastructure</span>"
+    ]
+  },
+  {
+    "objectID": "04-infrastructure.html#what-if-you-dont-feel-like-a-software-developer",
+    "href": "04-infrastructure.html#what-if-you-dont-feel-like-a-software-developer",
+    "title": "Infrastructure",
+    "section": "What if you don’t feel like a software developer?",
+    "text": "What if you don’t feel like a software developer?\nI certainly don’t feel like a software developer, and I have no credentials as one either. At the same time, in the process of doing science, I write code that analyses data, produces visualisations and builds models that DIRECTLY substantiate the scientific conclusions that I make in published work.\nIf the materials used to make scientific claims should be routinely accessible and verifiable, then scientists have an obligation to make all computer code available. And such an obligation is orthogonal to your level of experience in programming and software development. Thus, I think we have to recognise a hard truth: if your code is not ready for public scrutiny, then your science is not ready for public consumption.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Infrastructure</span>"
+    ]
+  },
+  {
+    "objectID": "04-infrastructure.html#sec-basic-infrastructure",
+    "href": "04-infrastructure.html#sec-basic-infrastructure",
+    "title": "Infrastructure",
+    "section": "Basic infrastructure",
+    "text": "Basic infrastructure\nIn the following subsections, I outline three key themes regarding infrastructure.\n\nProject organisation\nThere are several useful resources that outline general principles of good project organisation, such as this textbook on data management (Lewis, 2024) and this journal article on code development (Roth et al., 2025). More details can also be found in the Data Management section of this book.\nSome key themes in summary are as follows. Start the project with the intention of it being a public facing resource in the end. Only things that absolutely must be kept private should be inaccessible. Each project has one folder, which adopts a consistent structure across different projects, such as using consistent folder and filename conventions. There is a README file at the project root folder, which outlines details of the repository. Then whenever you land on a project, you consult the README file for an orientation. There is clear separation between raw and processed data, as well as a clear description of datasets in a data dictionary.\n\n\nVersion control, backup and collaboration\nWe use Git to version control all projects, and we use GitHub for an online backup of code and to collaborate on projects. If you are unfamiliar with version control software, such as Git, then there are many helpful tutorials online (see here and here). And if you use R and R Studio (or Positron), then this paper is particularly helpful (Vuorre & Curley, 2018).\nGit is designed primarily for code and limited to relatively small file sizes, but larger files (e.g., data and model objects) can be stored in other data repositories. We work within an Integrated Development Environment (IDE) that is designed for data science, such as Positron (previously RStudio), as this can make working with data and code so much easier, as well as more efficient and enjoyable. We connect local projects to an online repo, in order to iterate and collaborate with colleagues. The online repo can remain private during development, before being made public at a suitable point.\n\n\nReproducible pipelines\nThe goal here is that you can reproduce your own work easily and efficiently, and others can reproduce it too. We use Quarto documents for everything that we possibly can from data analysis files to written manuscripts and presentations. Quarto docs mix prose, as well as code from multiple languages (Python, R, Julia), and output to a wide range of document types (.html, pdf, word, presentation slides etc.).\nWithin the R ecosystem we use renv for package management. renv tracks the specific R package versions that you used per project and, in theory, allows other to use the same package versions when attempting to reproduce your analyses.\nBut renv is not perfect, and there can still be problems reproducing work across time and system settings, which this talk outlines. A more comprehensive solution is to use a container, such as Docker, to reproduce the entire system. Containers can be a bit off-putting initially, but this tutorial paper is an excellent starting point (Wiebels & Moreau, 2021). A container is a shareable Linux environment with the appropriate package and system versions that anyone else can use or create. For instance, if you use a different Operating System, or typically use different programming language, such as a Python user inspecting R code, then you can run and verify the code in a container. To see and work with a minimal test example that uses my group’s typical data science workflow using Positron, then go here.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Infrastructure</span>"
+    ]
+  },
+  {
+    "objectID": "04-infrastructure.html#the-basic-rule",
+    "href": "04-infrastructure.html#the-basic-rule",
+    "title": "Infrastructure",
+    "section": "The basic rule",
+    "text": "The basic rule\nWrite everything as if someone else will need to run it without you present. That someone is usually you, eight months from now, having forgotten everything.\n\n\n\n\n\n\nLewis, C. (2024). Data Management in Large-Scale Education Research. Chapman and Hall/CRC. https://doi.org/10.1201/9781032622835\n\n\nRoth, J., Duan, Y., Mahner, F. P., Kaniuth, P., Wallis, T. S. A., & Hebart, M. N. (2025). Ten principles for reliable, efficient, and adaptable coding in psychology and cognitive neuroscience. Communications Psychology, 3(1), 62. https://doi.org/10.1038/s44271-025-00236-3\n\n\nVuorre, M., & Curley, J. P. (2018). Curating Research Assets: A Tutorial on the Git Version Control System. Advances in Methods and Practices in Psychological Science, 1(2), 219–236. https://doi.org/10.1177/2515245918754826\n\n\nWiebels, K., & Moreau, D. (2021). Leveraging Containers for Reproducible Psychological Research. Advances in Methods and Practices in Psychological Science, 4(2), 25152459211017853. https://doi.org/10.1177/25152459211017853",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Infrastructure</span>"
+    ]
+  },
+  {
+    "objectID": "project-workflow.html",
+    "href": "project-workflow.html",
+    "title": "Project workflow",
+    "section": "",
+    "text": "Chapters\nPart 2 outlines an example research workflow for psychology and cognitive neuroscience.\nIn this part of the book, there are eight chapters, which cover the following topics.",
+    "crumbs": [
+      "Project workflow"
+    ]
+  },
+  {
+    "objectID": "project-workflow.html#chapters",
+    "href": "project-workflow.html#chapters",
+    "title": "Project workflow",
+    "section": "",
+    "text": "Workflow overview (Workflow overview)\nPlanning (Planning)\nData management (Data Management)\nData processing (Data Processing)\nData visualisation (Data Visualisation)\nInferential workflow (Inferential Workflow)\nDissemination (Dissemination)\nLimitations (Limitations)",
+    "crumbs": [
+      "Project workflow"
+    ]
+  },
+  {
+    "objectID": "05-overview.html",
+    "href": "05-overview.html",
+    "title": "Workflow overview",
+    "section": "",
+    "text": "Guiding principles\nIn this chapter, I want to summarise my group’s current scientific workflow. I use the term “scientific workflow” as a bridge to link general software tools, such as git and containers, with more specific data science tools and choices regarding various things, such as research design, data wrangling, visualisation and model building. For instance, one may change the coding language from R to Python or make different data wrangling, visualisation or modelling choices, whilst still using git and container for version control and reproducibility. The aim of the chapter is to provide a clear and coherent overview that can act as a roadmap for subsequent chapters.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "05-overview.html#guiding-principles",
+    "href": "05-overview.html#guiding-principles",
+    "title": "Workflow overview",
+    "section": "",
+    "text": "We aim to use software that is open source and free whenever possible.\nWe want the default workflow to be general enough for most use-cases that we encounter in psychology and neuroscience 1.\n\nAs such, the workflow should embody what we consider “sensible defaults”.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "05-overview.html#benefits-of-using-sensible-defaults",
+    "href": "05-overview.html#benefits-of-using-sensible-defaults",
+    "title": "Workflow overview",
+    "section": "Benefits of using “sensible defaults”",
+    "text": "Benefits of using “sensible defaults”\nThere are several benefits to establishing “sensible defaults” within a workflow:\n\nA workflow document can be written and circulated, which is versioned and timestamped, but also dynamic such that it can be updated as approaches, tools and software change.\nStaff and students starting new projects have a template to follow that requires minimal input from others to get started. There are a host of resources, including textbooks, journal articles, blog posts, recorded lectures and tutorials, that new folks can follow.\nThere is a common frame of reference between team members, which can aid collaboration and pre-submission peer-review. For instance, it becomes far easier to perform code review and give feedback, if the overarching data science workflow is familiar.\nBy design, the default workflow generalises to most projects in your lab. Therefore, the main time cost is setting up the first project. Once the workflow is established, the setup and basic structure can just be copied to other projects. And by doing so, one would hope to make the steps more habitual and routine in nature and therefore less effortful.\nIt becomes easier to see when departures from a default workflow are required and what might justify such departures. For instance, if the data are flat or cross-sectional in nature and devoid of repeat observations then it will become clear very quickly that a multi-level model is not possible.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "05-overview.html#science-stack",
+    "href": "05-overview.html#science-stack",
+    "title": "Workflow overview",
+    "section": "Science stack",
+    "text": "Science stack\nHere I build on the Infrastructure section, by including other tools that form part of our scientific workflow.\n\nLiterature: Zotero\n\nWe store all literature sources in Zotero.\n\nIDE: Positron (VS Code-based, R/Python)\n\nWe use Positron as the primary IDE (previously RStudio).\n\nVersion control/Collaboration/Backup/Sharing: Git and GitHub (see here and here)\n\nWe use git for version control and GitHub for collaboration, backup and sharing.\n\nLanguage: R\n\nWe try to use R for everything.\n\nPre-registration: OSF & AsPredicted.org\n\nWe pre-register all confirmatory studies via the OSF or aspredicted.\n\nData wrangling and visualisation: Tidyverse\n\nWe use the Tidyverse tools to make “tidy”, long format dataframes and data visualisations.\n\nModelling: brms + cmdstanr + CmdStan\n\nWe use brms to fit Bayesian regression models, which uses stan on the backend.\n\nPackage management: renv\n\nWe use renv to manage and track the exact package versions used in each specific project.\n\nManuscript: Quarto + quarto-preprint (Typst PDF + HTML)\n\nWe write manuscripts in quarto and output to .html, .pdf and even MS Word (if forced).\n\nReproducible environment: Docker + rocker\n\nWe have recently started using Docker to containerise our work.\n\nData and model storage: OSF / Zenodo (for large files)\n\nWe previously used the OSF to store large files and model objects.\nBut things are changing - see here, here, and here for a summary of useful alternatives.\n\nPermanent archive: Zenodo (DOI on journal acceptance)\n\nWe have recently started using Zenodo for long-term archival purposes.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "05-overview.html#workflow-in-practice",
+    "href": "05-overview.html#workflow-in-practice",
+    "title": "Workflow overview",
+    "section": "Workflow in practice",
+    "text": "Workflow in practice\nAlthough the above may seem like a long list, I think a worked example of the main phases may help contextualise the workflow. More specifically, it will hopefully highlight a set of practices that we have developed in an attempt to make them habitual and thus easier to use in a routine and cognitively efficient manner.\n\nSetup. We always start by pointing the IDE (Positron) to the project folder and initialising git and renv. From then on, we are working in a self-contained project, which is version controlled and uses project-specific R package versions. And we only ever use a handful of commands from git and renv, so it is not overly cumbersome.\nProject development. We use quarto docs for everything that we possibly can. They can combine prose and code and are therefore suitable for programmatic data analysis pipelines, as well as technical reports such as journal articles. We collaborate in teams at this point via GitHub.\nDissemination. We publish a pre-print that includes links to the GitHub repo, as well as any other relevant links, such as OSF pages and any records of pre-registrations.\nArchive. In addition to the GitHub repo, which is publically available, once the paper is accepted at a journal and/or we feel that we have enough peer-review feedback, we have started linking GitHub repos to Zenodo. Zenodo provides an independent and versioned archive via a DOI and can be easily linked to existing GitHub repos with minimal setup.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "05-overview.html#what-comes-next",
+    "href": "05-overview.html#what-comes-next",
+    "title": "Workflow overview",
+    "section": "What comes next?",
+    "text": "What comes next?\nNow that we have a birds eye view of the basic workflow, it is time to fill in a few more details. In the following six chapters, I briefly unpack some of the key themes that arise in almost any research project. I do this in the rough chronology of a research project, which starts from planning and runs to dissemination.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "05-overview.html#footnotes",
+    "href": "05-overview.html#footnotes",
+    "title": "Workflow overview",
+    "section": "",
+    "text": "There will be exceptions, of course. For example, specialised human neuroscience measurements might be one such exception. But the basic set of steps and tools should be useful in most cases as they are, whilst also serving as an excellent starting point to depart from when necessary.↩︎",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow overview</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html",
+    "href": "06-planning.html",
+    "title": "Planning",
+    "section": "",
+    "text": "Aims\nPlanning is the part of the research process that gets surprisingly little attention in methods training in my view, given the impact that it has on everything else that follows. It is more common for methods classes to focus on what to do once you have the data in hand. This is unfortunate because the decisions made before data collection regarding such things as research design, theory, hypotheses, methodology, sampling and analysis strategy constrain what can be reasonably claimed afterwards.\nAnd there’s no need to take my word for it. Andrew Gelman is a statistician who knows a fair bit about sophisticated statistical analyses, and yet he has this to say:\n“once the data have been collected, the most important decisions have already been done”.\n— Andrew Gelman (2024).\nCompared to the other chapters in this section, this chapter on planning feels the most diffuse, wide-ranging and impactful. The sheer number, depth and complexity of themes that seem like reasonable considerations could constitute a book in their own right. Set within this context, the best I can offer at this stage is to stress the importance of planning and the myriad forms that such planning might take (Scheel, Tiokhin, et al., 2021). To this end, below I highlight some themes and decision spaces that we find ourselves in on a regular basis. These decision spaces are supposed to highlight the difficulties that we often face in planning studies, rather than to provide a neat set of solutions.\nSet within this context, each decision space outlined below typically prompts the recognition that much more reading is required before making any final decisions. Wider and deeper reading often also makes it clear that a collaboration with other colleagues may also be necessary. The planning process is not linear, but better represented as a cycle of many different conversations and considerations. It is also an iterative process, where each section can feed into and help inform other sections. A decision on whether to start a project, as well as how it should be designed, requires an overall assessment and integration of many different factors. I highlight some of these factors and associated questions in the subsections that follows.\nAims and objectives should be clear and honest 1.\nHere are some questions that we routinely ask ourselves:",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#aims",
+    "href": "06-planning.html#aims",
+    "title": "Planning",
+    "section": "",
+    "text": "What kind of research is being conducted, or what “mode” of science are you operating in? And what literature is being used to determine this?\nIs it helpful to consider a continuum between exploratory and confirmatory research, and how is the distinction being operationalised (Feest & Devezer, 2025)?\nAre there particular parts of the project that are more or less exploratory or confirmatory?\nIs the work trying to generate hypotheses that can be tested in future research, or confirm clearly specified hypotheses?\nIs the work theory-driven or more focussed on observing and detecting phenomena?",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#expectations",
+    "href": "06-planning.html#expectations",
+    "title": "Planning",
+    "section": "Expectations",
+    "text": "Expectations\nWe have conversations about likely expectations, given our current background knowledge of the literature and from running prior studies.\n\nWhat is the “Hollywood result” or best outcome that we could expect?\nAre we happy if the results are suggestive at best, or inconclusive?\nCan we run a simulation study to calibrate likely expectations (Heathcote et al., 2019; Stevenson et al., 2025)?\nCan a multi-experiment approach mitigate the limits of a single experimental approach?",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#feasibility",
+    "href": "06-planning.html#feasibility",
+    "title": "Planning",
+    "section": "Feasibility",
+    "text": "Feasibility\nWe also routinely ask these questions about feasibility.\n\nWhat resources are available, in terms of money, people, equipment and time, to support the project?\nDo we think the cost-benefit is worthwhile?\nIn terms of opportunity cost, what other projects could we run instead?\nCan we afford to run multi-method or multi-experiment projects?\nDo we need to setup formal collaborations to deepen and broaden the scope of expertise in the project?",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#theory",
+    "href": "06-planning.html#theory",
+    "title": "Planning",
+    "section": "Theory",
+    "text": "Theory\nThere is a lot to read about theory building in psychology and human neuroscience. Good starting points include classics by Paul Meehl and Douglas Hintzman (Hintzman, 1991; Meehl, 1967; Meehl, 1990b, 1990a). More recently, there was a special issue on theory (Proulx & Morey, 2021) and many calls for how and why to build better theories in psychology (Devezer et al., 2021; Guest, 2024; Guest & Martin, 2021; Navarro, 2020; Oberauer & Lewandowsky, 2019).\nBut, should all research be theory-driven? Certainly not. Keep in mind that non-theory driven research is fine too, and may actually be more suitable to the current research environment in psychology (Debrouwere & Rosseel, 2022).\nIf research is theory-driven, then some questions we routinely ask are:\n\nWhat kind of theory is being used?\nWhat are the features that make it a “good” theory?\nWhere do hypotheses come from?\nDoes the theory make distinct predictions compared to other theories?\nDo formal, mathematical models of the theory exist that quantitative predictions can be derived from?\nAre the predictions ordinal, such that the prediction is that condition A &gt; B, but the size of that difference is unspecified and irrelevant to the theoretical prediction? And does this matter?\nCan the research design distinguish between predictions form different theories?\nWhat are the current limits to theory?\nIs there non-human animal evidence that supports the theory?",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#design",
+    "href": "06-planning.html#design",
+    "title": "Planning",
+    "section": "Design",
+    "text": "Design\nThis introductory textbook is a fantastic resource for anyone who uses an experimental design in their research experimtentology.io (Frank et al., 2025). I strongly recommend reading it from cover to cover before running your next experiment.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#measurement",
+    "href": "06-planning.html#measurement",
+    "title": "Planning",
+    "section": "Measurement",
+    "text": "Measurement\nWhat evidence is there available that the measures that you intend to use are both reliable and valid? There is a surprising lack of effort spent on addressing these questions before running experiments (Flake & Fried, 2020; Scheel, Tiokhin, et al., 2021). And many highly cited papers and associated tasks appear uninterpretable due to a lack validity and/or reliability (Higgins et al., 2022; Higgins et al., 2026; Hussey & Hughes, 2020; Külpmann et al., 2026). This state of affairs should be a concern for anyone and everyone who cares about research being useful. Therefore, before running a study, ask yourself one question: what evidence do you have to demonstrate that the measures you are using are reliable and valid?",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#sampling",
+    "href": "06-planning.html#sampling",
+    "title": "Planning",
+    "section": "Sampling",
+    "text": "Sampling\nThere are many different ways to determine a sample size (Lakens, 2022). And this table from Daniel Laken’s paper nicely summarises some of the options (Table 6.1).\n\n\n\n\nTable 6.1: Types of justification for sample size decisions, and when each applies. Adapted from Lakens (2022).\n\n\n\n\n\n\nType of Justification\nWhen is this justification applicable?\n\n\n\n\nMeasure entire population\nA researcher can specify the entire population, it is finite, and it is possible to measure (almost) every entity in the population.\n\n\nResource constraints\nLimited resources are the primary reason for the choice of the sample size a researcher can collect.\n\n\nAccuracy\nThe research question focusses on the size of a parameter, and a researcher collects sufficient data to have an estimate with a desired level of accuracy.\n\n\nA-priori power analysis\nThe research question has the aim to test whether certain effect sizes can be statistically rejected with a desired statistical power.\n\n\nHeuristics\nA researcher decides upon the sample size based on a heuristic, general rule or norm that is described in the literature, or communicated orally.\n\n\nNo justification\nA researcher has no reason to choose a specific sample size, or does not have a clearly specified inferential goal and wants to communicate this honestly.\n\n\n\n\n\n\n\n\nSuch considerations do not solely rely on determining the number of participants to test. They can also rely on the number of data points per participant (Baker et al., 2021). Therefore, it is the number of observations in relation to your research design that matters.\nGiven that we typically use multi-level models, which account for the nested structure within the data, off the shelf tools like G*Power can only really be useful for a quick-and-dirty estimate. But they have limited value if a more realistic appreciation of data is desired. Instead, most often we find that simulation-based approaches are required.\n\nSimulation\nI have found the recent rise in popularity of data simulation approaches to be one of the biggest advantages to psychology and brain science research. I think it should become a core component of graduate training.\nThere are many reasons to simulate data throughout different phases of a scientific project (DeBruine & Barr, 2021; Gelman, 2024). Lisa DeBruine summarises these reasons in this talk. When planning a project, one may use simulation to determine a sample size. Good examples include Solomon Kurz’s blog posts, and Lisa Debruine’s R package faux{} (DeBruine & Barr, 2021). In particular, the faux package vignettes are excellent resources to get a foothold in the world of data simulation for planning purposes. I have also written up a worked example of planning via simulation in the context of education research, which outlines some key steps in the process (see this book chapter; Ramsey (2026)).",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#pre-registration",
+    "href": "06-planning.html#pre-registration",
+    "title": "Planning",
+    "section": "Pre-registration",
+    "text": "Pre-registration\nLots has been written about the pros and cons of pre-registration (Krypotos et al., 2022; Nosek et al., 2019; Simmons et al., 2021). For instance, preregistation has several benefits built-in by design as it prevents p-hacking, HARKing, and publication bias, whilst also placing constraints on underpowered studies (Lakens et al., 2024; Scheel, Schijen, et al., 2021). But it is just one tool, and therefore it has a restrictive use case, which does not apply to all forms of science.\nMy group has been routinely pre-registering experiments since 2017. In our experience, it fundamentally changes the conversation that team members have before running the study. The depth of discussion is qualitatively different if you have to address concrete and hard questions before you run the study, and you know that you will be accountable to those decisions after you get the data.\nIt often forces a reckoning about the actual aims of the research and/or the resources available. In many situations, during the process of drafting a pre-registration, it made us realise that we were not ready or able to run the experiment that we had initially conceived. So, we changed the project in substantial ways, or we simply didn’t run the study at all. Overall, the process has been really beneficial in using resources more efficiently in our view. For more of my thoughts on pre-registration, see this book chapter (Ramsey, 2026).\n\n\n\n\n\n\nBaker, D. H., Vilidaite, G., Lygo, F. A., Smith, A. K., Flack, T. R., Gouws, A. D., & Andrews, T. J. (2021). Power Contours: Optimising Sample Size and Precision in Experimental Psychology and Human Neuroscience. Psychological Methods, 26(3), 295–314. https://doi.org/10.1037/met0000337\n\n\nDebrouwere, S., & Rosseel, Y. (2022). The Conceptual, Cunning, and Conclusive Experiment in Psychology. Perspectives on Psychological Science, 17(3), 852–862. https://doi.org/10.1177/17456916211026947\n\n\nDeBruine, L. M., & Barr, D. J. (2021). Understanding Mixed-Effects Models Through Data Simulation. Advances in Methods and Practices in Psychological Science, 4(1), 2515245920965119. https://doi.org/10.1177/2515245920965119\n\n\nDevezer, B., Navarro, D. J., Vandekerckhove, J., & Ozge Buzbas, E. (2021). The case for formal methodology in scientific reform. Royal Society Open Science, 8(3), 200805. https://doi.org/10.1098/rsos.200805\n\n\nFeest, U., & Devezer, B. (2025, January). Toward a More Accurate Notion of Exploratory Research (And Why it Matters) [Preprint]. https://philsci-archive.pitt.edu/24482/\n\n\nFlake, J. K., & Fried, E. I. (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. Advances in Methods and Practices in Psychological Science, 3, 456–465. https://doi.org/10.1177/2515245920952393\n\n\nFrank, M. C., Braginsky, M., Cachia, J., Coles, N. A., Hardwicke, T. E., Hawkins, R. D., Mathur, M. B., & Williams, R. (2025, January 30). Experimentology. https://experimentology.io/\n\n\nGelman, A. (2024). Before data analysis: Additional recommendations for designing experiments to learn about the world. Journal of Consumer Psychology, 34, 190–191.\n\n\nGuest, O. (2024). What Makes a Good Theory, and How Do We Make a Theory Good? Computational Brain & Behavior, 7(4), 508–522. https://doi.org/10.1007/s42113-023-00193-2\n\n\nGuest, O., & Martin, A. E. (2021). How Computational Modeling Can Force Theory Building in Psychological Science. Perspectives on Psychological Science, 1745691620970585. https://doi.org/10.1177/1745691620970585\n\n\nHeathcote, A., Lin, Y.-S., Reynolds, A., Strickland, L., Gretton, M., & Matzke, D. (2019). Dynamic models of choice. Behavior Research Methods, 51(2), 961–985. https://doi.org/10.3758/s13428-018-1067-y\n\n\nHiggins, W. C., Ross, R. M., Langdon, R., & Polito, V. (2022). The “Reading the Mind in the Eyes” Test Shows Poor Psychometric Properties in a Large, Demographically Representative U.S. Sample. Assessment, 10731911221124342. https://doi.org/10.1177/10731911221124342\n\n\nHiggins, W. C., Savalei, V., Polito, V., & Ross, R. M. (2026). Reading the Mind in the Eyes Test Scores Demonstrate Poor Structural Properties in Nine Large Non-Clinical Samples. Assessment, 33(2), 204–220. https://doi.org/10.1177/10731911251328604\n\n\nHintzman, D. L. (1991). Why are formal models useful in psychology? In Relating theory and data: Essays on human memory in honor of Bennet B. Murdock. (pp. 39–56). Lawrence Erlbaum Associates, Inc.\n\n\nHussey, I., & Hughes, S. (2020). Hidden Invalidity Among 15 Commonly Used Measures in Social and Personality Psychology. Advances in Methods and Practices in Psychological Science, 3(2), 166–184. https://doi.org/10.1177/2515245919882903\n\n\nKrypotos, A.-M., Mertens, G., Klugkist, I., & Engelhard, I. M. (2022). Preregistration: Definition, Advantages, Disadvantages, and How It Can Help Against Questionable Research Practices. In W. O’Donohue, A. Masuda, & S. Lilienfeld (Eds.), Avoiding Questionable Research Practices in Applied Psychology (pp. 343–357). Springer International Publishing. https://doi.org/10.1007/978-3-031-04968-2_15\n\n\nKülpmann, A. I., Ries, J.-P., Hussey, I., & Elson, M. (2026, January 24). Methodological Flexibility in the Iowa Gambling Task Undermines Interpretability: A Meta-method Review (4g3vr_v1). https://osf.io/preprints/psyarxiv/4g3vr_v1/ (Pre-published)\n\n\nLakens, D. (2022). Sample Size Justification. Collabra: Psychology, 8(1), 33267. https://doi.org/10.1525/collabra.33267\n\n\nLakens, D., Mesquida, C., Rasti, S., & Ditroilo, M. (2024). The benefits of preregistration and Registered Reports. Evidence-Based Toxicology, 2(1), 2376046. https://doi.org/10.1080/2833373X.2024.2376046\n\n\nMeehl, P. E. (1967). Theory-Testing in Psychology and Physics: A Methodological Paradox. Philosophy of Science, 34(2), 103–115. https://doi.org/10.1086/288135\n\n\nMeehl, P. E. (1990a). Appraising and Amending Theories: The Strategy of Lakatosian Defense and Two Principles that Warrant It. Psychological Inquiry, 1(2), 108–141. https://doi.org/10.1207/s15327965pli0102_1\n\n\nMeehl, P. E. (1990b). Why Summaries of Research on Psychological Theories are Often Uninterpretable. Psychological Reports, 66(1), 195–244. https://doi.org/10.2466/pr0.1990.66.1.195\n\n\nNavarro, D. J. (2020). If mathematical psychology did not exist we would need to invent it: A case study in cumulative theoretical development. https://psyarxiv.com/ygbjp/\n\n\nNosek, B. A., Beck, E. D., Campbell, L., Flake, J. K., Hardwicke, T. E., Mellor, D. T., van’t Veer, A. E., & Vazire, S. (2019). Preregistration is hard, and worthwhile. Trends in Cognitive Sciences, 23(10), 815–818.\n\n\nOberauer, K., & Lewandowsky, S. (2019). Addressing the theory crisis in psychology. Psychonomic Bulletin & Review, 26(5), 1596–1618. https://doi.org/10.3758/s13423-019-01645-2\n\n\nProulx, T., & Morey, R. D. (2021). Beyond Statistical Ritual: Theory in Psychological Science. Perspectives on Psychological Science, 16(4), 671–681. https://doi.org/10.1177/17456916211017098\n\n\nRamsey, R. (2026). A workflow for experiment planning and data analysis in education research (version 0.1). https://rich-ramsey.github.io/li-lab-workflow/\n\n\nScheel, A. M., Schijen, M. R. M. J., & Lakens, D. (2021). An Excess of Positive Results: Comparing the Standard Psychology Literature With Registered Reports. Advances in Methods and Practices in Psychological Science, 4(2), 25152459211007467. https://doi.org/10.1177/25152459211007467\n\n\nScheel, A. M., Tiokhin, L., Isager, P. M., & Lakens, D. (2021). Why hypothesis testers should spend less time testing hypotheses. Perspectives on Psychological Science, 16, 744–755. https://doi.org/10.1177/1745691620966795\n\n\nSimmons, J., D. Nelson, L., & Simonsohn, U. (2021). Pre-registration: Why and How. Journal of Consumer Psychology, 31(1), 151–162. https://doi.org/10.1002/jcpy.1208\n\n\nStevenson, N., Donzallaz, M., Innes, R., Forstmann, B., Matzke, D., & Heathcote, A. (2025). EMC2: An R Package for cognitive models of choice. https://osf.io/2e4dq_v2",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "06-planning.html#footnotes",
+    "href": "06-planning.html#footnotes",
+    "title": "Planning",
+    "section": "",
+    "text": "What I mean by honest is that a particular theory is not retro-fitted onto the paper once the study has been completed, just because journal editors and reviewers demand “theory-driven research”.↩︎",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Planning</span>"
+    ]
+  },
+  {
+    "objectID": "07-data-management.html",
+    "href": "07-data-management.html",
+    "title": "Data Management",
+    "section": "",
+    "text": "The data management plan\nData management is the least glamorous part of the research workflow and probably one of the most foundational. The decisions made about how to structure, name, and document data before and during collection determine how smoothly everything downstream goes, as well as the degree to which FAIR principles are satisfied. Retrofitting good data management onto a badly organised dataset is painful. Starting with it costs very little. And it is something that my team and I could very much improve upon.\nThis is another big topic, one that fills an entire book (Lewis, 2024). Here, I just highlight five aspects that do not cost too much time or effort, but really add value in our experience.\nAnd once you set these up for one project, many of the basic features generalise to other similar projects. This means that you can benefit form efficiency savings since they do not need to be created from scratch for every project.\nData management plans typically consist of a short document (&lt; 5 pages), which is written before the data are collected, and that details the key aspects of how the data will be managed. Use the data management plan to focus your team’s efforts on setting up a roadmap to achieving FAIR data. And keep it in the project repository so that team members can see it and others can see it once the project is made public. Data management plans are becoming more common as funders and ethical committees seek assurance that the data will be managed safely and efficiently.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Management</span>"
+    ]
+  },
+  {
+    "objectID": "07-data-management.html#a-project-level-readme-file",
+    "href": "07-data-management.html#a-project-level-readme-file",
+    "title": "Data Management",
+    "section": "A project-level README file",
+    "text": "A project-level README file\nAs already mentioned in the Infrastructure section, each project has a README file at the root directory. A README file outlines details of the repository, such as folder and file structures, as well as requirements for using the data and code. When anyone lands on a project folder, including future you, then they would immediately be directed to the README file to be oriented to what the repository contains. In our experience, the information in a README file is typically already known and written down somewhere, such as in a lab notes document. Therefore, routinely writing a README file just encourages the team to write these notes in a more consistent way and in one place. In our experience, if baked on from the start of a project, it does not create “extra work”, it just forces you to work more consistently.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Management</span>"
+    ]
+  },
+  {
+    "objectID": "07-data-management.html#data-dictionaries",
+    "href": "07-data-management.html#data-dictionaries",
+    "title": "Data Management",
+    "section": "Data dictionaries",
+    "text": "Data dictionaries\nA data dictionary is a standardised way of reporting features of all variables in a dataset. Every person who has worked with behavioural data has at some point encountered a dataset where it is unclear which way round the coding goes. A data dictionary makes that unambiguous. To make this concrete, consider a typical reaction time dataset with five variables. First, we simulate the data and take a look at the first few rows.\n\n\n\n\nTable 7.1: First six rows of a simulated reaction time dataset.\n\n\n\n\n\n\nsubj\nitem\ncondition\nrt\nacc\n\n\n\n\n01\n01\ncongruent\n475\n1\n\n\n01\n01\nincongruent\n738\n1\n\n\n01\n02\ncongruent\n645\n1\n\n\n01\n02\nincongruent\n669\n0\n\n\n01\n03\ncongruent\n530\n1\n\n\n01\n03\nincongruent\n577\n1\n\n\n\n\n\n\n\n\nThe dataset has 200 rows (10 participants × 10 items × 2 conditions) and 5 variables. Notice that subj and item are zero-padded strings rather than integers. This is a small but important choice that ensures correct alphabetical sorting and avoids accidental arithmetic on ID variables.\nNow here is the corresponding data dictionary. Every variable is documented with its name, a plain-language label, type and format, allowable values, units where applicable, and whether it is a primary collected variable or derived from other variables.\n\n\n\n\nTable 7.2: Data dictionary for the simulated reaction time dataset.\n\n\n\n\n\n\nVariable\nLabel\nType\nFormat\nAllowable values\nOrigin\n\n\n\n\nsubj\nParticipant identifier\ncharacter\nzero-padded string (e.g. '01')\n01 – 10\nprimary\n\n\nitem\nStimulus item identifier\ncharacter\nzero-padded string (e.g. '01')\n01 – 10\nprimary\n\n\ncondition\nTrial condition\ncharacter\nstring\ncongruent, incongruent\nprimary\n\n\nrt\nReaction time\nnumeric\nmilliseconds (ms)\npositive numeric\nprimary\n\n\nacc\nResponse accuracy\ninteger\nbinary\n0 = incorrect, 1 = correct\nprimary\n\n\n\n\n\n\n\n\nA few things worth noting about this dictionary:\n\nThe subj and item columns are documented as character strings, not integers, which reflects how they are actually stored.\nThe acc column documents the coding explicitly (0 = incorrect, 1 = correct).\n\nThe dictionary itself should be stored as a plain CSV file alongside the data. That way it is machine-readable, version-controlled, and readable by anyone without specialist software.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Management</span>"
+    ]
+  },
+  {
+    "objectID": "07-data-management.html#a-style-guide",
+    "href": "07-data-management.html#a-style-guide",
+    "title": "Data Management",
+    "section": "A style guide",
+    "text": "A style guide\nAdopting a style guide within a lab aids in standardisation within and across projects. A style guide simply means consistent and standardised way of doing things, such as naming folder and files. For example, Lewis (2024) suggests being consistent in the following processes:\n\nDirectory structures.\nFile naming.\nVariable naming.\nAssigning variable values.\nWriting code.\n\nAlthough this seems a bit fussy, it makes your data science life so much easier. And like any other standardisation procedure, it makes it so much easier for collaborators, lab members and anyone else to quickly get on board with your data science workflow.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Management</span>"
+    ]
+  },
+  {
+    "objectID": "07-data-management.html#open-data-formats",
+    "href": "07-data-management.html#open-data-formats",
+    "title": "Data Management",
+    "section": "Open data formats",
+    "text": "Open data formats\nData should be stored in open (non-proprietary) file formats, such as CSV for tabular data, so that they can be accessed by any software.\n\n\n\n\n\n\nLewis, C. (2024). Data Management in Large-Scale Education Research. Chapman and Hall/CRC. https://doi.org/10.1201/9781032622835",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Management</span>"
+    ]
+  },
+  {
+    "objectID": "08-data-processing.html",
+    "href": "08-data-processing.html",
+    "title": "Data Processing",
+    "section": "",
+    "text": "A reproducible analysis pipeline\nData processing, which typically involves re-shaping and cleaning data, is where most of the actual work happens and where methods sections can fall somewhat silent. A typical paper will describe the design in detail and the statistical model at length, and then dispose of everything in between with a far briefer set of notes and rest on allusions to “standard preprocessing.” This is where decisions that can affect the results are made. And it is therefore fundamental that these steps are made explicit via code and easy to reproduce.\nHere I do not focus on specific decisions, such as setting exclusion criteria. Instead, I want to focus on the more general aspects of our chosen workflow.\nAnalysis code should be a record of decisions, not just the instructions for a computer. Quarto documents, therefore, by mixing code and prose, can be a useful ally by serving as a processing notebook.\nThe raw-to-processed pipeline should be fully reproducible from a script. This means that you, or anyone else in theory, could reproduce the analysis steps at any point in time. And it means that any changes to analysis decisions can be easily made with the consequent changes to data and figures easily implemented.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "08-data-processing.html#the-tidy-data-format",
+    "href": "08-data-processing.html#the-tidy-data-format",
+    "title": "Data Processing",
+    "section": "The “tidy” data format",
+    "text": "The “tidy” data format\nTidy data is long format data rather than wide format data. This means one observation is recorded per row of a data structure. We find this helpful for many reasons:\n\nIt makes data visualisation easy and natural in ggplot2 see Data Visualisation.\nThe structure is suitable for fitting multi-level regression models, which is our default approach to inferential modelling.\nTeam members (and anyone else) can expect and understand a certain data format, which aids collaboration, peer-review and ease of re-use.\nIf another format is required, we like the idea that one default version is in the tidy, long format.\nSummary data can easily be calculated in variety of forms.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "08-data-processing.html#the-ease-of-dplyr-commands",
+    "href": "08-data-processing.html#the-ease-of-dplyr-commands",
+    "title": "Data Processing",
+    "section": "The ease of “dplyr” commands",
+    "text": "The ease of “dplyr” commands\nMy feelings about using R + Tidyverse tools for data science is nicely summarised in this post by Amol Borkar.\nMore specifically, I like using dplyr verbs for at least four reasons.\n\nThe syntax is easy to understand and relies on a small set of verbs.\nThey can be piped into a chain and easily commented.\nThey are designed to naturally integrate with data visualisation via ggplot2.\nThey fit nicely into a functional programming approach, which makes it easy to write compact loops.\n\nIn the following subsections, I outline each of these benefits in a little more detail.\n\n(1) Syntax for common dplyr verbs\n\n\n\n\nTable 8.1: Core dplyr verbs and their purpose\n\n\n\n\n\n\nVerb\nPurpose\nExample\n\n\n\n\n`filter()`\nKeep rows matching a condition\n`filter(rt &gt; 200)`\n\n\n`select()`\nKeep or drop columns by name\n`select(id, condition, rt)`\n\n\n`mutate()`\nCreate or transform columns\n`mutate(log_rt = log(rt))`\n\n\n`summarise()`\nCollapse rows to summary statistics\n`summarise(mean_rt = mean(rt))`\n\n\n`arrange()`\nSort rows by one or more columns\n`arrange(desc(rt))`\n\n\n`group_by()`\nDefine groups for subsequent operations\n`group_by(participant, condition)`\n\n\n`rename()`\nRename columns\n`rename(response_time = rt)`\n\n\n`distinct()`\nKeep unique rows\n`distinct(participant)`\n\n\n`count()`\nCount observations by group\n`count(condition)`\n\n\n`left_join()`\nJoin two data frames by a key column\n`left_join(data, demo, by = 'id')`\n\n\n\n\n\n\n\n\n\n\n(2) Piping verbs together\nThe real power of dplyr is chaining verbs with the pipe operator (|&gt;). Each step reads as a plain-English instruction, and comments make the intent explicit.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\n# Start with the penguins dataset\npenguins |&gt;\n  # Remove rows with missing values in key columns\n  filter(!is.na(bill_length_mm), !is.na(body_mass_g)) |&gt;\n  # Keep only the columns we need\n  select(species, island, bill_length_mm, body_mass_g, sex) |&gt;\n  # Create a new column: body mass in kg\n  mutate(body_mass_kg = body_mass_g / 1000) |&gt;\n  # Group by species and sex\n  group_by(species, sex) |&gt;\n  # Summarise to get mean bill length and body mass per group\n  summarise(\n    n = n(),\n    mean_bill = mean(bill_length_mm),\n    mean_mass = mean(body_mass_kg),\n    .groups = \"drop\"\n  ) |&gt;\n  # Sort by mean bill length, descending\n  arrange(desc(mean_bill))\n\n# A tibble: 8 × 5\n  species   sex        n mean_bill mean_mass\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Chinstrap male      34      51.1      3.94\n2 Gentoo    male      61      49.5      5.48\n3 Chinstrap female    34      46.6      3.53\n4 Gentoo    &lt;NA&gt;       4      45.6      4.59\n5 Gentoo    female    58      45.6      4.68\n6 Adelie    male      73      40.4      4.04\n7 Adelie    &lt;NA&gt;       5      37.8      3.54\n8 Adelie    female    73      37.3      3.37\n\n\nThe pipeline above is a readable record of every data transformation decision. Each step is independently understandable, and the comments make it easy to return to six months later.\n\n\n(3) Seamless integration with ggplot2\nBecause dplyr and ggplot2 share the same data grammar, a pipeline can flow directly into a plot.\n\n# Start with the penguins dataset\npenguins |&gt;\n  # Remove rows where sex is missing\n  filter(!is.na(sex)) |&gt;\n  # Map species to x-axis, bill length to y-axis, colour by sex\n  ggplot(aes(x = species, y = bill_length_mm, colour = sex)) +\n  # Plot individual observations, jittered slightly to reduce overplotting\n  geom_jitter(width = 0.05, alpha = 0.4, size = 1.5) +\n  # Human-readable axis and legend labels\n  labs(\n    title = \"Penguin bill length by sex and species\",\n    x = \"Species\",\n    y = \"Bill length (mm)\",\n    colour = \"Sex\"\n  ) +\n  # Clean minimal theme with base font size 13\n  theme_minimal(base_size = 13)\n\n\n\n\n\n\n\nFigure 8.1: Bill length by species and sex in the Palmer Penguins dataset. Points show individual observations; error bars show 95% confidence intervals.\n\n\n\n\n\nThe pipeline from raw data to final figure is a single unbroken chain. The wrangling and the visualisation are in one place, which means the figure is always reproducible from the data without any intermediate steps that could be lost or forgotten.\n\n\n(4) Functional programming\nFunctional programming is a compact way to avoid writing step-by-step loops. For more information, see this talk by Hadley Wickham and this vignette of the tidyverse purrr package. We find it helpful to think about data wrangling in this way, and we suspect it reduces the number of bugs in our code.\n\n\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for Data Science. \"O’Reilly Media, Inc.\". https://books.google.com?id=TiLEEAAAQBAJ",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "09-data-visualisation.html",
+    "href": "09-data-visualisation.html",
+    "title": "Data Visualisation",
+    "section": "",
+    "text": "Guiding principles\nVisualisation is not a final step. It is a practice that runs through the entire research workflow from data simulation, to the first look at raw data to the figures in a paper. Treating it as decoration, something to be polished once the analysis is done, misses most of its value.\nWe actually do not find the process of data visualisation to be particularly intuitive or easy, and we are always trying to find better ways to plot aspects of our data and models. Fortunately, help is at hand, as there are several excellent resources that have helped develop our thinking and that warrant a close read in our view (Gabry et al., 2019; Healy, 2019; Kay, 2024; Nordmann et al., 2022).",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "09-data-visualisation.html#guiding-principles",
+    "href": "09-data-visualisation.html#guiding-principles",
+    "title": "Data Visualisation",
+    "section": "",
+    "text": "Visualisation is an essential part of data analysis, rather than a decoration.\n\nWe of course use it to understand our data and to communicate with others easily.\nBut we also use it in an iterative manner as a code check on data processing steps. For example, when adding a new wrangling step we would typically plot-wrangle-plot, to see that the process worked as intended.\nLikewise, with model objects, there are many different ways that visualisation can make complex processes easier to understand by adding checks and balances throughout (Gabry et al., 2019).\n\nWe try to show as much of the raw data as possible, and not just the summary data. This is because plots reveal what you don’t see in a table of summary statistics, as nicely illustrated by Anscombe’s quartet and the datasaurus dozen.\nUncertainty should be made visible via interval estimates and visualisations of posterior distributions.\nAvoid bar charts for continuous data — raincloud plots, violin plots, dot plots are preferred.\nUse a consistent style or theme across a project.\nRequest pre-publication peer-review of figures. Given the vast range of options in terms of aesthetics and layouts, we seek pre-publication feedback on our plots as we work through the analytical process.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "09-data-visualisation.html#our-current-stack",
+    "href": "09-data-visualisation.html#our-current-stack",
+    "title": "Data Visualisation",
+    "section": "Our current stack",
+    "text": "Our current stack\n\nggplot2 as the foundation.\nggdist for distributional plots and posterior visualisation of model objects.\npatchwork for multi-panel figures.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "09-data-visualisation.html#some-examples",
+    "href": "09-data-visualisation.html#some-examples",
+    "title": "Data Visualisation",
+    "section": "Some examples",
+    "text": "Some examples\nThe four plots below illustrate the guiding principles described above, using the palmerpenguins dataset throughout. They are assembled into a single figure using patchwork.\nWe first get some data and fit a model in brms.\n\n\nCode\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(ggdist)\nlibrary(patchwork)\nlibrary(brms)\nlibrary(RColorBrewer)\n\n# Remove rows with missing values in key columns\npenguins_clean &lt;- penguins |&gt;\n  filter(!is.na(bill_length_mm), !is.na(sex), !is.na(species))\n\n# Create models directory if it doesn't exist\nif (!dir.exists(\"models\")) {\n  dir.create(\"models\")\n}\n\n# Fit once and save; load thereafter\nif (!file.exists(\"models/m_penguins.rds\")) {\n  m_penguins &lt;- brm(\n    formula = bill_length_mm ~ species + sex,\n    data = penguins_clean,\n    family = gaussian(),\n    chains = 4,\n    cores = 4,\n    iter = 2000,\n    warmup = 1000,\n    seed = 123,\n    silent = 2\n  )\n  saveRDS(m_penguins, \"models/m_penguins.rds\")\n} else {\n  m_penguins &lt;- readRDS(\"models/m_penguins.rds\")\n}\n\n\nAnd then we show some plots. The top row is raw data. The bottom row is from the fitted model object.\n\n\nCode\n# A shared minimal theme for consistency across all four panels\ntheme_book &lt;- function() {\n  theme_minimal(base_size = 12) +\n    theme(\n      legend.position = \"bottom\",\n      panel.grid.minor = element_blank()\n    )\n}\n\n# --- Plot A: Distribution check ---\n# A quick density plot per species to check data after wrangling.\n# The rug layer shows individual observations and makes outliers obvious.\np_a &lt;- penguins_clean |&gt;\n  ggplot(aes(x = bill_length_mm, fill = species, colour = species)) +\n  # Density per species\n  geom_density(alpha = 0.3) +\n  # Rug of individual observations along the x-axis\n  geom_rug(alpha = 0.4, linewidth = 0.3) +\n  labs(\n    title = \"A: Distribution check\",\n    x = \"Bill length (mm)\",\n    y = \"Density\",\n    fill = \"Species\",\n    colour = \"Species\"\n  ) +\n  theme_book()\n\n# --- Plot B: Raincloud plot ---\n# Raw dots + half-violin + pointrange summary.\n# Shows the full distribution and individual observations simultaneously.\np_b &lt;- penguins_clean |&gt;\n  ggplot(aes(\n    x = species,\n    y = bill_length_mm,\n    fill = species,\n    colour = species\n  )) +\n  # Half-violin (the \"cloud\")\n  stat_halfeye(\n    adjust = 0.5,\n    width = 0.5,\n    justification = -0.2,\n    .width = 0,\n    point_colour = NA,\n    alpha = 0.6\n  ) +\n  # Raw data dots (the \"rain\")\n  geom_dots(\n    side = \"left\",\n    dotsize = 0.5,\n    justification = 1.1,\n    alpha = 0.5\n  ) +\n  # Median and 80% interval\n  stat_pointinterval(\n    .width = 0.80,\n    linewidth = 1.2,\n    position = position_nudge(x = -0.05)\n  ) +\n  labs(\n    title = \"B: Raincloud plot\",\n    x = \"Species\",\n    y = \"Bill length (mm)\"\n  ) +\n  theme_book() +\n  theme(legend.position = \"none\")\n\n# --- Plot C: Posterior predictive check ---\n# Observed data density (dark line) overlaid with draws from the posterior\n# predictive distribution (light lines). A good model should produce\n# predictive draws that closely match the observed data.\np_c &lt;- pp_check(\n  m_penguins,\n  ndraws = 50, # number of posterior predictive draws to overlay\n  type = \"dens_overlay\"\n) +\n  labs(\n    title = \"C: Posterior predictive check\",\n    x = \"Bill length (mm)\",\n    y = \"Density\"\n  ) +\n  theme_book()\n\n# --- Plot D: Quantile intervals ---\n# Median with nested 50%, 80%, and 95% intervals per species and sex.\n# A clean way to communicate uncertainty without a full distribution.\np_d &lt;- penguins_clean |&gt;\n  ggplot(aes(x = species, y = bill_length_mm)) +\n  # Quantile intervals at three levels\n  stat_halfeye(\n    aes(fill = after_stat(level)),\n    .width = c(0.66, 0.95),\n    position = position_dodge(0.4),\n    colour = \"black\",\n    #fill = after_stat(level),\n    alpha = 0.7\n  ) +\n  scale_fill_brewer(na.translate = FALSE) +\n  labs(\n    title = \"D: Quantile intervals\",\n    x = \"Species\",\n    y = \"Bill length (mm)\",\n    colour = \"Sex\"\n  ) +\n  theme_book()\n\n# --- Assemble with patchwork ---\n(p_a + p_b) / (p_c + p_d)\n\n\n\n\n\n\n\n\nFigure 9.1: Four visualisation approaches illustrated using the Palmer Penguins dataset. (A) Distribution check: density plots with a rug for spotting outliers after wrangling. (B) Raincloud plot: raw data, distribution, and summary in one panel. (C) Posterior predictive check: observed data density (dark) overlaid with draws from the posterior predictive distribution (light), as a model fit check. (D) Quantile intervals: median with 66%, and 95% intervals to show uncertainty.\n\n\n\n\n\n\n\n\n\n\n\nGabry, J., Simpson, D., Vehtari, A., Betancourt, M., & Gelman, A. (2019). Visualization in Bayesian Workflow. Journal of the Royal Statistical Society Series A: Statistics in Society, 182(2), 389–402. https://doi.org/10.1111/rssa.12378\n\n\nHealy, K. (2019). Data visualization: A practical introduction. Princeton University Press.\n\n\nKay, M. (2024). Ggdist: Visualizations of Distributions and Uncertainty in the Grammar of Graphics. IEEE Transactions on Visualization and Computer Graphics, 30(1), 414–424. https://doi.org/10.1109/TVCG.2023.3327195\n\n\nNordmann, E., McAleer, P., Toivo, W., Paterson, H., & DeBruine, L. M. (2022). Data Visualization Using R for Researchers Who Do Not Use R. Advances in Methods and Practices in Psychological Science, 5(2), 25152459221074654. https://doi.org/10.1177/25152459221074654",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "10-inferential-workflow.html",
+    "href": "10-inferential-workflow.html",
+    "title": "Inferential Workflow",
+    "section": "",
+    "text": "Why an inferential workflow?\nThe approach described here follows aspects of Bayesian workflows that have been outlined by several researchers (Gelman et al., 2020; Gelman, Vehtari, McElreath, Simpson, et al., 2026; Kruschke, 2015; McElreath, 2020). We implement the approach in R using brms and Stan. Of course, this is not the only principled approach to data analysis. It is the one we use, and it is general enough to handle the vast majority of data structures encountered in cognitive and brain science.\nA disclaimer: we do not use the entire workflow in every project (although I wish we did). Instead, given that we find the general approach very satisfying, and we borrow from it whenever we can in combination with other tools and approaches. In the subsections that follow, we outline key features of our preferred inferential workflow, along with some cautionary notes and examples.\nThe term “statistical analysis” often implies a single inferential step based on the output of a regression model or statistical test. Instead, we try to embrace a workflow approach to inference, which involves a series of decisions about model structure, prior specification, checking, and interpretation that requires iteration and judgement at every stage (Gelman et al., 2020; Gelman, Vehtari, & McElreath, 2026). The distinction matters because it changes what you are trying to do. You are not trying to produce a p-value in a ritualistic manner (Gigerenzer, 2018). You are trying to build a model of the process that generated your data, check whether it is a reasonable model, and use it to update your uncertainty about the question you started with. Fully and consistently embracing a worked-up inferential workflow remains an ambition for my group, rather than a consistent reality. But the change in mindset from a testing strategy to a workflow fundamentally changes what you might be able to expect from a research endeavour.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Inferential Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "10-inferential-workflow.html#caution-first-last-and-always",
+    "href": "10-inferential-workflow.html#caution-first-last-and-always",
+    "title": "Inferential Workflow",
+    "section": "Caution first, last and always",
+    "text": "Caution first, last and always\nA fancy inferential model cannot fix a broken research design or poor measurement practices. In other words, avoid making Champagne inferences on a beer budget. I return to this quote by Andrew Gelman, as I think it is worth repeating:\n“once the data have been collected, the most important decisions have already been done”.\n— Andrew Gelman (2024).\nAnd I also note the cautionary conclusion to Richard McElreath’s textbook on building statistical models (McElreath, 2020). He makes it clear that all statistical models are fundamentally limited and need to be framed within the wider scientific context, such as:\n\n\n\nThe importance of theory\nOpen data and materials\nPre-registration\nMeta-analyses\n\n\n\nComputational modelling\nData science\nExperimental design\nAnd many more besides",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Inferential Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "10-inferential-workflow.html#estimation-with-uncertainty-vs-hypothesis-testing",
+    "href": "10-inferential-workflow.html#estimation-with-uncertainty-vs-hypothesis-testing",
+    "title": "Inferential Workflow",
+    "section": "Estimation with uncertainty vs hypothesis testing",
+    "text": "Estimation with uncertainty vs hypothesis testing\nWe follow an estimation with uncertainty approach to Bayesian regression. Such approaches aim to quantify plausible values and their associated uncertainty in relation to a research question. Krushcke & Liddell (Kruschke & Liddell, 2018) provide a nice comparison of the difference between estimation with uncertainty and hypothesis testing via the use of p-values or Bayes factors (Figure 10.1).\n\n\n\n\n\n\nFigure 10.1: Adapted from Figure 1 in Kruschke & Liddell (2018).\n\n\n\nImportantly, both estimation and hypothesis testing approaches can be used to evaluate the evidence for or against hypotheses. The difference is that hypothesis tests require some form of arbitrary cut-off, which can lead to dichotomous thinking. In contrast, estimation approaches have no bright lines to form inferences, and instead require some evaluative thinking to summarise the sign, size and precision of the estimate in the context of the specifics of the research domain (Cumming, 2014; Frank et al., 2025; Kruschke & Liddell, 2018; McElreath, 2020). The additional benefit is that the outcome can remain closer to a meaningful value of interest, rather than a p-value statistic or Bayes factor. For a longer treatment of what I like about Bayesian estimation approaches and some practical examples, see this blog post.\nHere I just illustrate the basic idea in a few plots to give you a sense of the general approach. Let’s say you ran an experiment measuring reaction times between two experimental conditions. You predict that condition A will lead to longer reaction times that condition B. You calculate the contrast between two conditions and evaluate the outcome. Here are four possibilities based on simulated data, just to illustrate the process.\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggdist)\nlibrary(patchwork)\n\n# Fixed x-axis so zero sits in the same position across all four panels\nx_lim &lt;- c(-150, 150)\n\nplot_posterior &lt;- function(draws, title, subtitle) {\n  tibble(effect = draws) |&gt;\n    ggplot(aes(x = effect, y = 0)) +\n    # Slab: grey below zero, skyblue above zero\n    stat_halfeye(\n      aes(fill = after_stat(x &gt; 0)),\n      .width = c(0.66, 0.95),\n      point_interval = median_qi,\n      slab_colour = NA,\n      interval_colour = \"gray30\",\n      point_colour = \"gray30\",\n      point_size = 1.5,\n      height = 0.55\n    ) +\n    scale_fill_manual(\n      values = c(\"FALSE\" = \"gray75\", \"TRUE\" = \"skyblue\"),\n      guide = \"none\"\n    ) +\n    geom_vline(\n      xintercept = 0,\n      linetype = \"dashed\",\n      colour = \"gray40\",\n      linewidth = 0.5\n    ) +\n    scale_x_continuous(limits = x_lim, breaks = seq(-150, 150, by = 50)) +\n    labs(\n      title = title,\n      subtitle = subtitle,\n      x = \"Estimated effect (ms)\",\n      y = NULL\n    ) +\n    theme_minimal(base_size = 12) +\n    theme(\n      panel.grid.minor = element_blank(),\n      panel.grid.major.y = element_blank(),\n      axis.text.y = element_blank(),\n      axis.ticks.y = element_blank(),\n      plot.subtitle = element_text(size = 10, colour = \"gray40\"),\n      plot.title = element_text(size = 12, face = \"bold\"),\n      plot.margin = margin(4, 8, 4, 8)\n    )\n}\n\nset.seed(1234)\nn &lt;- 4000\n\np_a &lt;- plot_posterior(\n  draws = rnorm(n, mean = 80, sd = 20),\n  title = \"A: Predicted direction\",\n  subtitle = \"Sign and size clear; evidence supporting the hypothesis\"\n)\n\np_b &lt;- plot_posterior(\n  draws = rnorm(n, mean = 15, sd = 45),\n  title = \"B: Inconclusive\",\n  subtitle = \"Sign and size unclear; evidence inconclusive\"\n)\n\np_c &lt;- plot_posterior(\n  draws = rnorm(n, mean = -70, sd = 22),\n  title = \"C: Opposite direction\",\n  subtitle = \"Sign and size clear; evidence is opposite to the hypothesis\"\n)\n\np_d &lt;- plot_posterior(\n  draws = rnorm(n, mean = 4, sd = 8),\n  title = \"D: Precise null\",\n  subtitle = \"Interval near zero and narrow; effect negligible in practice\"\n)\n\n(p_a | p_b) /\n  (p_c | p_d) +\n  plot_annotation(\n    caption = \"Dashed line = zero. Point = posterior median. Thick interval = 66% QI; thin interval = 95% QI.\"\n  )\n\n\n\n\n\n\n\n\nFigure 10.2: Four possible outcomes when estimating an effect with uncertainty. In each panel the posterior distribution summarises plausible values of the effect (e.g., a difference in reaction time between conditions, in ms). The vertical dashed line marks zero (no effect). The skyblue portion of each distribution is above zero; the grey portion is below. Inner and outer intervals show 66% and 95% quantile intervals respectively.\n\n\n\n\n\nThe key point across these four scenarios is that each requires reasoning about the posterior distribution in the context of your research question. What counts as a meaningful effect size in your domain? How much precision do you need before acting on a finding? These are scientific questions, not statistical ones, and they have no universal answer. The advantage of the estimation approach is that it keeps those questions visible rather than collapsing them into a binary decision.\nNote also that scenario B, which produces inconclusive evidence, is not a failure. It provides useful information. The data are consistent with a range of values in positive and negative directions, including both meaningful effects and negligible ones, which suggests a follow-up study with better precision is warranted.\nThis is where the connection to replication and multi-study approaches matters. Rather than asking whether a result “replicated” in a binary sense, the estimation approach asks whether the new posterior, informed by more and better data, narrows the uncertainty enough to draw a clearer conclusion. A pre-registered follow-up with an improved research design and a larger sample is not a test of whether the original finding was “real”. It is just the next step in a cumulative process of estimation, each study refining the picture. The tools are the same throughout. Summarise a distribution, evaluate the sign, size, and interval, and reason about what that means for the question at hand. No arbitrary thresholds required.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Inferential Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "10-inferential-workflow.html#multilevel-models-as-a-sensible-default",
+    "href": "10-inferential-workflow.html#multilevel-models-as-a-sensible-default",
+    "title": "Inferential Workflow",
+    "section": "Multilevel models as a sensible default",
+    "text": "Multilevel models as a sensible default\nRichard McElreath’s textbook (McElreath, 2020) suggests that starting with the expectation that your data might be best modelled using a multi-level structure is not a bad idea. If it turns out that a simpler, single level model is most appropriate, then that’s fine. In our experience working in cognitive psychology and neuroscience, where data typically spans repeat observations within participants and/or stimulus types, this default expectation is sensible. We also adopt a maximal varying effects structure whenever possible, based on the suggestions by Dale Barr and colleagues (Barr et al., 2013). And this is one reason why we use a Bayesian approach to building regression models because frequentist equivalents, such as those built lme4, frequently fail to converge. On a practical level, therefore, we are able to consistently fit fairly complex models, with the cost being that they take more time to setup and they take longer to build.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Inferential Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "10-inferential-workflow.html#the-value-of-posterior-predictions",
+    "href": "10-inferential-workflow.html#the-value-of-posterior-predictions",
+    "title": "Inferential Workflow",
+    "section": "The value of posterior predictions",
+    "text": "The value of posterior predictions\nPosterior predictions are predicted data values that are generated from your model. They can be useful for at least two reasons. First, as part of a model checking procedure, they can be useful to check that your model can create data looks like the original data. Second, to draw inferences, rather than interpret coefficients and model parameters, it can often be more intuitive to take complex models and make predictions in the natural scale that the observations were made in (Arel-Bundock et al., 2024; Arel-Bundock, 2025; Rohrer & Arel-Bundock, 2026). Rather than trying to directly interpret parameters in a regression model, you get values on the natural scale as a function of the research design. This textbook by Vincent Arel-Bundock Model to meaning is a really helpful starting point with easy-to-use code and practical examples.\n\n\n\n\n\n\nArel-Bundock, V. (2025). Model to Meaning: How to Interpret Statistical Models with R and Python. CRC Press.\n\n\nArel-Bundock, V., Greifer, N., & Heiss, A. (2024). How to Interpret Statistical Models Using marginaleffects for R and Python. Journal of Statistical Software, 111, 1–32. https://doi.org/10.18637/jss.v111.i09\n\n\nBarr, D. J., Levy, R., Scheepers, C., & Tily, H. J. (2013). Random effects structure for confirmatory hypothesis testing: Keep it maximal. Journal of Memory and Language, 68(3), 255–278. https://doi.org/10.1016/j.jml.2012.11.001\n\n\nCumming, G. (2014). The New Statistics: Why and How. Psychological Science, 25(1), 7–29. https://doi.org/10.1177/0956797613504966\n\n\nFrank, M. C., Braginsky, M., Cachia, J., Coles, N. A., Hardwicke, T. E., Hawkins, R. D., Mathur, M. B., & Williams, R. (2025, January 30). Experimentology. https://experimentology.io/\n\n\nGelman, A. (2024). Before data analysis: Additional recommendations for designing experiments to learn about the world. Journal of Consumer Psychology, 34, 190–191.\n\n\nGelman, A., Vehtari, A., & McElreath, R. (2026). Statistical workflow. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 384(2321), 20250293. https://doi.org/10.1098/rsta.2025.0293\n\n\nGelman, A., Vehtari, A., McElreath, R., Simpson, D., Margossian, C. C., Yao, Y., Kennedy, L., Gabry, J., Bürkner, P.-C., Modrák, M., & Barajas, V. L. (2026). Bayesian Workflow. CRC Press. https://books.google.com?id=ur7bEQAAQBAJ\n\n\nGelman, A., Vehtari, A., Simpson, D., Margossian, C. C., Carpenter, B., Yao, Y., Kennedy, L., Gabry, J., Bürkner, P.-C., & Modrák, M. (2020, November 3). Bayesian Workflow. http://arxiv.org/abs/2011.01808\n\n\nGigerenzer, G. (2018). Statistical Rituals: The Replication Delusion and How We Got There. Advances in Methods and Practices in Psychological Science, 1(2), 198–218. https://doi.org/10.1177/2515245918771329\n\n\nKruschke, J. K. (2015). Doing Bayesian Data Analysis: A Tutorial Introduction with R. Academic Press.\n\n\nKruschke, J. K., & Liddell, T. M. (2018). The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective. Psychon Bull Rev, 25(1), 178–206. https://doi.org/10.3758/s13423-016-1221-4\n\n\nMcElreath, R. (2020). Statistical rethinking: A Bayesian course with examples in R and Stan. CRC press.\n\n\nRohrer, J. M., & Arel-Bundock, V. (2026). Models as Prediction Machines: How to Convert Confusing Coefficients Into Clear Quantities. Advances in Methods and Practices in Psychological Science, 9(2), 25152459261424825. https://doi.org/10.1177/25152459261424825",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Inferential Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "11-dissemination.html",
+    "href": "11-dissemination.html",
+    "title": "Dissemination",
+    "section": "",
+    "text": "Why write scientific material in Quarto?\nDissemination encapsulates something far broader and more diverse than a static pdf journal article. It includes preprints, talks, posters, blog posts, code releases, data deposits, and the various other ways that work leaves the lab and enters the world. It is also the point at which FAIR stops being a plan and hopefully becomes a reality.\nQuarto relies on markdown as a plain text format that was designed to be easy to read and write with (see markdown basics for details). Compared to a word processor like MS Word, the main conceptual distinction is that the source content appears in a different format to the appearance of the document that it outputs. The source format is largely plain text and code chunks, whereas the output format depends on what you want to produce (e.g., .html, pdf, presentation slides etc.). So, there is a clear and obvious separation of the content from the formatting.\nThere are several advantages to writing scientific documents in Quarto:\nAnd there is one legitimate limitation:\nHere is how we approach this issue. We output a pdf or MS word document and send it to collaborators and ask for their written feedback. We then incorporate that feedback into the version-controlled manuscript file with the project repository. This process typically relies on the lead author to request feedback, discuss it with the team, and then implement the changes. In practice, this is not an onerous task, and it is no worse than the torture of using track changes in MS Word. Of course, for very large collaborative teams (maybe those spanning 20 or more individuals), I would suggest that a different format is most suitable, such as a shared document, which anyone can edit.\nOn balance, for the vast majority of cases in my experience, Quarto is a far superior tool for writing scientific documents when compared to the dominant alternatives.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Dissemination</span>"
+    ]
+  },
+  {
+    "objectID": "11-dissemination.html#why-write-scientific-material-in-quarto",
+    "href": "11-dissemination.html#why-write-scientific-material-in-quarto",
+    "title": "Dissemination",
+    "section": "",
+    "text": "it generates fully reproducible documents.\nprose and code (in multiple programming languages) are combined.\neasy integration with version control systems that provide a single source of truth.\ncollaboration can easily be coordinated via shared access to a repository.\none common workflow can output to a variety of formats, such as websites, blogs, books, scientific reports, presentations.\nextensions, like quarto-preprint automate the formatting, so you can focus on the content.\ncitations are seamlessly integrated.\nit is free and open source.\n\n\n\nif your collaborators are not familiar with using Quarto and markdown documents, then it can be less straightforward.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Dissemination</span>"
+    ]
+  },
+  {
+    "objectID": "11-dissemination.html#the-value-of-preprints",
+    "href": "11-dissemination.html#the-value-of-preprints",
+    "title": "Dissemination",
+    "section": "The value of preprints",
+    "text": "The value of preprints\nFor a variety of reasons (“Accelerating Scientific Progress with Preprints,” 2024; Bourne et al., 2017; eLife; eLife Sciences Publications Limited, 2024), we preprint all of our scientific papers before we submit them to peer-review journals. Common preprint servers for psychology, neuroscience and related disciplines include BioRxiv, MedRxiv, PsyArXiv.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Dissemination</span>"
+    ]
+  },
+  {
+    "objectID": "11-dissemination.html#talks-and-other-formats",
+    "href": "11-dissemination.html#talks-and-other-formats",
+    "title": "Dissemination",
+    "section": "Talks and other formats",
+    "text": "Talks and other formats\nI started writing talks in Quarto using Revealjs. This means that slides for talks and teaching can be made using a common workflow. You can also write blog posts, websites, and books using the same underlying format.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Dissemination</span>"
+    ]
+  },
+  {
+    "objectID": "11-dissemination.html#make-the-repository-public",
+    "href": "11-dissemination.html#make-the-repository-public",
+    "title": "Dissemination",
+    "section": "Make the repository public",
+    "text": "Make the repository public\nIf you’ve followed along with the previous chapters, then this is the point in proceedings that you make the repository public (if it is not already public). This means that you typically turn any private settings to public in GitHub, the OSF or Zenodo, or wherever else you have aspects of your work stored. In practice, however, we find that we work with a public facing repository once we start writing up the paper for submission to a journal (Vuorre & Curley, 2018).\n\n\n\n\n\n\nAccelerating scientific progress with preprints. (2024). Nature Computational Science, 4(5), 311–311. https://doi.org/10.1038/s43588-024-00641-4\n\n\nBourne, P. E., Polka, J. K., Vale, R. D., & Kiley, R. (2017). Ten simple rules to consider regarding preprint submission. PLOS Computational Biology, 13(5), e1005473. https://doi.org/10.1371/journal.pcbi.1005473\n\n\neLife; eLife Sciences Publications Limited. (2024, May 7). Open Science: Why you should preprint your next paper. https://elifesciences.org/inside-elife/85d36b45/open-science-why-you-should-preprint-your-next-paper\n\n\nVuorre, M., & Curley, J. P. (2018). Curating Research Assets: A Tutorial on the Git Version Control System. Advances in Methods and Practices in Psychological Science, 1(2), 219–236. https://doi.org/10.1177/2515245918754826",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Dissemination</span>"
+    ]
+  },
+  {
+    "objectID": "12-limitations.html",
+    "href": "12-limitations.html",
+    "title": "Limitations",
+    "section": "",
+    "text": "Constraints on generality\nIn this chapter, I consider constraints on the generality of the workflow, as well as some potential barriers to uptake.\nThe outlined workflow aims to be general enough for a majority of use cases that we come into contact with. But I’m sure there are exceptions where the workflow may not transfer so effectively, and which represent necessary constraints on the generality of the proposed workflow (Simons et al., 2017). For instance, maybe some research tools, such as MRI, EEG or pupillometry measures, generate specialised data formats and/or require specific software (FSL, SPM, EEGLAB) that may impose its own data processing pipelines. This is to be expected.\nThis is also where a workflow can be used as a lens to view a data science project through, rather than a toolchain with a handle that gets cranked. A one-size-fits-all workflow is unrealistic anyway, given the complex nature of scientific data and associated materials. Instead, a workflow can be seen as a toolkit, aspects of which can be deployed in a variety of contexts and across distinct projects. And one may not use any of the tools that I presented, but instead use another set of tools to satisfy the principle that it should be a minimum expectation and routine that scientific materials are reasonably easy to verify.",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Limitations</span>"
+    ]
+  },
+  {
+    "objectID": "12-limitations.html#barriers-to-uptake",
+    "href": "12-limitations.html#barriers-to-uptake",
+    "title": "Limitations",
+    "section": "Barriers to uptake",
+    "text": "Barriers to uptake\nAs outlined in the Workflow overview section, the workflow that we use spans a number of interconnected tools. And depending on your familiarity with such tools, the sheer volume can be overwhelming. If you do decide to adopt aspects of this workflow, I suggest embracing principles of effective behaviour change (Poldrack, 2021). And watch this documentary on weight loss programme effectiveness, which is instructive and engaging when it comes to thinking about principles of effective behaviour change.\nSome quick starting points would be:\n\nDon’t change everything at once, as it will be overwhelming and exhausting.\nTake a stepwise approach that builds in new behaviours incrementally.\nWait for new behaviours to form habits, before adding new aspects to the workflow.\nPrioritise low-hanging fruit first to get some easy and enjoyable wins under your belt.\n\n\n\n\n\n\n\nPoldrack, R. (2021). Hard to Break : Why Our Brains Make Habits Stick. 1–232. https://www.torrossa.com/en/resources/an/5558859\n\n\nSimons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on Generality (COG): A Proposed Addition to All Empirical Papers. Perspectives on Psychological Science, 12(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
+    "crumbs": [
+      "Project workflow",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Limitations</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Accelerating scientific progress with preprints. (2024). Nature\nComputational Science, 4(5), 311–311. https://doi.org/10.1038/s43588-024-00641-4\n\n\nArel-Bundock, V. (2025). Model to Meaning:\nHow to Interpret Statistical Models with\nR and Python. CRC Press.\n\n\nArel-Bundock, V., Greifer, N., & Heiss, A. (2024). How to\nInterpret Statistical Models Using marginaleffects for\nR and Python. Journal of Statistical\nSoftware, 111, 1–32. https://doi.org/10.18637/jss.v111.i09\n\n\nArslan, R. (2026, April 13). Science needs downvotes. The 100%\nCI. https://www.the100.ci/2026/04/13/science-needs-downvotes/\n\n\nBaker, D. H., Vilidaite, G., Lygo, F. A., Smith, A. K., Flack, T. R.,\nGouws, A. D., & Andrews, T. J. (2021). Power Contours:\nOptimising Sample Size and Precision in\nExperimental Psychology and Human\nNeuroscience. Psychological Methods, 26(3),\n295–314. https://doi.org/10.1037/met0000337\n\n\nBarr, D. J., Levy, R., Scheepers, C., & Tily, H. J. (2013). Random\neffects structure for confirmatory hypothesis testing: Keep\nit maximal. Journal of Memory and Language, 68(3),\n255–278. https://doi.org/10.1016/j.jml.2012.11.001\n\n\nBourne, P. E., Polka, J. K., Vale, R. D., & Kiley, R. (2017). Ten\nsimple rules to consider regarding preprint submission. PLOS\nComputational Biology, 13(5), e1005473. https://doi.org/10.1371/journal.pcbi.1005473\n\n\nBuckheit, J. B., & Donoho, D. L. (1995). WaveLab and\nReproducible Research. In A. Antoniadis & G. Oppenheim\n(Eds.), Wavelets and Statistics (Vol. 103, pp.\n55–81). Springer New York. https://doi.org/10.1007/978-1-4612-2544-7_5\n\n\nChambers, C. D. (2017). The Seven Deadly Sins of\nPsychology: A Manifesto for\nReforming the Culture of Scientific\nPractice. Princeton University Press.\n\n\nCumming, G. (2014). The New Statistics: Why\nand How. Psychological Science, 25(1),\n7–29. https://doi.org/10.1177/0956797613504966\n\n\nDebrouwere, S., & Rosseel, Y. (2022). The Conceptual,\nCunning, and Conclusive Experiment in\nPsychology. Perspectives on Psychological Science,\n17(3), 852–862. https://doi.org/10.1177/17456916211026947\n\n\nDeBruine, L. M., & Barr, D. J. (2021). Understanding\nMixed-Effects Models Through Data Simulation. Advances\nin Methods and Practices in Psychological Science, 4(1),\n2515245920965119. https://doi.org/10.1177/2515245920965119\n\n\nDevezer, B., Navarro, D. J., Vandekerckhove, J., & Ozge Buzbas, E.\n(2021). The case for formal methodology in scientific reform. Royal\nSociety Open Science, 8(3), 200805. https://doi.org/10.1098/rsos.200805\n\n\nDonoho, D. L. (2010). An invitation to reproducible computational\nresearch. Biostatistics, 11(3), 385–388. https://doi.org/10.1093/biostatistics/kxq028\n\n\neLife; eLife Sciences Publications Limited. (2024, May 7). Open\nScience: Why you should preprint your next\npaper. https://elifesciences.org/inside-elife/85d36b45/open-science-why-you-should-preprint-your-next-paper\n\n\nFeest, U., & Devezer, B. (2025, January). Toward a More\nAccurate Notion of Exploratory Research (And\nWhy it Matters) [Preprint]. https://philsci-archive.pitt.edu/24482/\n\n\nFlake, J. K., & Fried, E. I. (2020). Measurement schmeasurement:\nQuestionable measurement practices and how to avoid them.\nAdvances in Methods and Practices in Psychological Science,\n3, 456–465. https://doi.org/10.1177/2515245920952393\n\n\nFrank, M. C., Braginsky, M., Cachia, J., Coles, N. A., Hardwicke, T. E.,\nHawkins, R. D., Mathur, M. B., & Williams, R. (2025, January 30).\nExperimentology. https://experimentology.io/\n\n\nGabry, J., Simpson, D., Vehtari, A., Betancourt, M., & Gelman, A.\n(2019). Visualization in Bayesian Workflow. Journal of\nthe Royal Statistical Society Series A: Statistics in Society,\n182(2), 389–402. https://doi.org/10.1111/rssa.12378\n\n\nGelman, A. (2024). Before data analysis: Additional\nrecommendations for designing experiments to learn about the world.\nJournal of Consumer Psychology, 34, 190–191.\n\n\nGelman, A., Vehtari, A., & McElreath, R. (2026). Statistical\nworkflow. Philosophical Transactions of the Royal Society A:\nMathematical, Physical and Engineering Sciences,\n384(2321), 20250293. https://doi.org/10.1098/rsta.2025.0293\n\n\nGelman, A., Vehtari, A., McElreath, R., Simpson, D., Margossian, C. C.,\nYao, Y., Kennedy, L., Gabry, J., Bürkner, P.-C., Modrák, M., &\nBarajas, V. L. (2026). Bayesian Workflow. CRC\nPress. https://books.google.com?id=ur7bEQAAQBAJ\n\n\nGelman, A., Vehtari, A., Simpson, D., Margossian, C. C., Carpenter, B.,\nYao, Y., Kennedy, L., Gabry, J., Bürkner, P.-C., & Modrák, M. (2020,\nNovember 3). Bayesian Workflow. http://arxiv.org/abs/2011.01808\n\n\nGigerenzer, G. (2018). Statistical Rituals: The\nReplication Delusion and How We Got There.\nAdvances in Methods and Practices in Psychological Science,\n1(2), 198–218. https://doi.org/10.1177/2515245918771329\n\n\nGuest, O. (2024). What Makes a Good Theory,\nand How Do We Make a Theory Good?\nComputational Brain & Behavior, 7(4), 508–522. https://doi.org/10.1007/s42113-023-00193-2\n\n\nGuest, O., & Martin, A. E. (2021). How Computational Modeling\nCan Force Theory Building in Psychological Science.\nPerspectives on Psychological Science, 1745691620970585. https://doi.org/10.1177/1745691620970585\n\n\nHealy, K. (2019). Data visualization: A practical introduction.\nPrinceton University Press.\n\n\nHeathcote, A., Lin, Y.-S., Reynolds, A., Strickland, L., Gretton, M.,\n& Matzke, D. (2019). Dynamic models of choice. Behavior Research\nMethods, 51(2), 961–985. https://doi.org/10.3758/s13428-018-1067-y\n\n\nHiggins, W. C., Ross, R. M., Langdon, R., & Polito, V. (2022). The\n“Reading the Mind in the\nEyes” Test Shows Poor Psychometric\nProperties in a Large, Demographically\nRepresentative U.S. Sample.\nAssessment, 10731911221124342. https://doi.org/10.1177/10731911221124342\n\n\nHiggins, W. C., Savalei, V., Polito, V., & Ross, R. M. (2026).\nReading the Mind in the Eyes Test Scores Demonstrate\nPoor Structural Properties in Nine Large Non-Clinical\nSamples. Assessment, 33(2), 204–220. https://doi.org/10.1177/10731911251328604\n\n\nHintzman, D. L. (1991). Why are formal models useful in psychology? In\nRelating theory and data: Essays on human memory in\nhonor of Bennet B. Murdock. (pp. 39–56).\nLawrence Erlbaum Associates, Inc.\n\n\nHussey, I. (2025). Data is not available upon request.\nMeta-Psychology, 9. https://doi.org/10.15626/MP.2023.4008\n\n\nHussey, I., & Hughes, S. (2020). Hidden Invalidity\nAmong 15 Commonly Used Measures in\nSocial and Personality Psychology.\nAdvances in Methods and Practices in Psychological Science,\n3(2), 166–184. https://doi.org/10.1177/2515245919882903\n\n\nJones, H. S. (1957). Halley as an Astronomer. Notes and\nRecords of the Royal Society of London, 12(2), 175–192. https://www.jstor.org/stable/530833\n\n\nKay, M. (2024). Ggdist: Visualizations of\nDistributions and Uncertainty in the\nGrammar of Graphics. IEEE Transactions on\nVisualization and Computer Graphics, 30(1), 414–424. https://doi.org/10.1109/TVCG.2023.3327195\n\n\nKruschke, J. K. (2015). Doing Bayesian Data Analysis:\nA Tutorial Introduction with R. Academic\nPress.\n\n\nKruschke, J. K., & Liddell, T. M. (2018). The Bayesian New\nStatistics: Hypothesis testing, estimation,\nmeta-analysis, and power analysis from a Bayesian\nperspective. Psychon Bull Rev, 25(1), 178–206. https://doi.org/10.3758/s13423-016-1221-4\n\n\nKrypotos, A.-M., Mertens, G., Klugkist, I., & Engelhard, I. M.\n(2022). Preregistration: Definition,\nAdvantages, Disadvantages, and How It\nCan Help Against Questionable Research Practices. In W.\nO’Donohue, A. Masuda, & S. Lilienfeld (Eds.), Avoiding\nQuestionable Research Practices in Applied\nPsychology (pp. 343–357). Springer International Publishing.\nhttps://doi.org/10.1007/978-3-031-04968-2_15\n\n\nKülpmann, A. I., Ries, J.-P., Hussey, I., & Elson, M. (2026, January\n24). Methodological Flexibility in the Iowa\nGambling Task Undermines Interpretability: A\nMeta-method Review (4g3vr_v1). https://osf.io/preprints/psyarxiv/4g3vr_v1/\n(Pre-published)\n\n\nLakens, D. (2022). Sample Size Justification. Collabra:\nPsychology, 8(1), 33267. https://doi.org/10.1525/collabra.33267\n\n\nLakens, D., Mesquida, C., Rasti, S., & Ditroilo, M. (2024). The\nbenefits of preregistration and Registered Reports.\nEvidence-Based Toxicology, 2(1), 2376046. https://doi.org/10.1080/2833373X.2024.2376046\n\n\nLewis, C. (2024). Data Management in Large-Scale\nEducation Research. Chapman and Hall/CRC. https://doi.org/10.1201/9781032622835\n\n\nMcElreath, R. (2020). Statistical rethinking: A\nBayesian course with examples in R and\nStan. CRC press.\n\n\nMeehl, P. E. (1967). Theory-Testing in\nPsychology and Physics: A Methodological\nParadox. Philosophy of Science, 34(2), 103–115.\nhttps://doi.org/10.1086/288135\n\n\nMeehl, P. E. (1990a). Appraising and Amending Theories:\nThe Strategy of Lakatosian Defense and\nTwo Principles that Warrant It.\nPsychological Inquiry, 1(2), 108–141. https://doi.org/10.1207/s15327965pli0102_1\n\n\nMeehl, P. E. (1990b). Why Summaries of\nResearch on Psychological Theories are\nOften Uninterpretable. Psychological Reports,\n66(1), 195–244. https://doi.org/10.2466/pr0.1990.66.1.195\n\n\nNavarro, D. J. (2020). If mathematical psychology did not exist we\nwould need to invent it: A case study in cumulative\ntheoretical development. https://psyarxiv.com/ygbjp/\n\n\nNordmann, E., McAleer, P., Toivo, W., Paterson, H., & DeBruine, L.\nM. (2022). Data Visualization Using R for Researchers\nWho Do Not Use R. Advances in Methods and Practices in\nPsychological Science, 5(2), 25152459221074654. https://doi.org/10.1177/25152459221074654\n\n\nNosek, B. A., Beck, E. D., Campbell, L., Flake, J.\nK., Hardwicke, T. E., Mellor, D. T., van’t Veer, A. E., & Vazire,\nS. (2019). Preregistration is hard, and worthwhile. Trends in\nCognitive Sciences, 23(10), 815–818.\n\n\nOberauer, K., & Lewandowsky, S. (2019). Addressing the theory crisis\nin psychology. Psychonomic Bulletin & Review,\n26(5), 1596–1618. https://doi.org/10.3758/s13423-019-01645-2\n\n\nPoldrack, R. (2021). Hard to Break : Why Our\nBrains Make Habits Stick. 1–232. https://www.torrossa.com/en/resources/an/5558859\n\n\nProulx, T., & Morey, R. D. (2021). Beyond Statistical\nRitual: Theory in Psychological\nScience. Perspectives on Psychological Science,\n16(4), 671–681. https://doi.org/10.1177/17456916211017098\n\n\nRamsey, R. (2026). A workflow for experiment planning and data\nanalysis in education research (version 0.1). https://rich-ramsey.github.io/li-lab-workflow/\n\n\nRohrer, J. M., & Arel-Bundock, V. (2026). Models as Prediction\nMachines: How to Convert Confusing\nCoefficients Into Clear Quantities. Advances in Methods and\nPractices in Psychological Science, 9(2),\n25152459261424825. https://doi.org/10.1177/25152459261424825\n\n\nRoth, J., Duan, Y., Mahner, F. P., Kaniuth, P., Wallis, T. S. A., &\nHebart, M. N. (2025). Ten principles for reliable, efficient, and\nadaptable coding in psychology and cognitive neuroscience.\nCommunications Psychology, 3(1), 62. https://doi.org/10.1038/s44271-025-00236-3\n\n\nScheel, A. M., Schijen, M. R. M. J., & Lakens, D. (2021). An\nExcess of Positive Results:\nComparing the Standard Psychology Literature With\nRegistered Reports. Advances in Methods and Practices in\nPsychological Science, 4(2), 25152459211007467. https://doi.org/10.1177/25152459211007467\n\n\nScheel, A. M., Tiokhin, L., Isager, P. M., & Lakens, D. (2021). Why\nhypothesis testers should spend less time testing hypotheses.\nPerspectives on Psychological Science, 16, 744–755. https://doi.org/10.1177/1745691620966795\n\n\nSimmons, J., D. Nelson, L., & Simonsohn, U. (2021).\nPre-registration: Why and How. Journal of\nConsumer Psychology, 31(1), 151–162. https://doi.org/10.1002/jcpy.1208\n\n\nSimons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on\nGenerality (COG): A Proposed\nAddition to All Empirical Papers. Perspectives\non Psychological Science, 12(6), 1123–1128. https://doi.org/10.1177/1745691617708630\n\n\nStevenson, N., Donzallaz, M., Innes, R., Forstmann, B., Matzke, D.,\n& Heathcote, A. (2025). EMC2: An R\nPackage for cognitive models of choice. https://osf.io/2e4dq_v2\n\n\nVuorre, M., & Curley, J. P. (2018). Curating Research\nAssets: A Tutorial on the Git Version Control\nSystem. Advances in Methods and Practices in Psychological\nScience, 1(2), 219–236. https://doi.org/10.1177/2515245918754826\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for\nData Science. \"O’Reilly Media, Inc.\". https://books.google.com?id=TiLEEAAAQBAJ\n\n\nWiebels, K., & Moreau, D. (2021). Leveraging Containers\nfor Reproducible Psychological Research. Advances in\nMethods and Practices in Psychological Science, 4(2),\n25152459211017853. https://doi.org/10.1177/25152459211017853\n\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, Ij. J., Appleton, G.,\nAxton, M., Baak, A., Blomberg, N., Boiten, J.-W., da Silva Santos, L.\nB., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M.,\nDillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., … Mons, B.\n(2016). The FAIR Guiding Principles for scientific data\nmanagement and stewardship. Scientific Data, 3(1, 1),\n160018. https://doi.org/10.1038/sdata.2016.18",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+# Dissemination {#sec-dissemination}
+
+::: {.callout-tip}
+## tl;dr
+
+Use [`quarto`](https://quarto.org/) for everything. It is magical.
+:::
+
+Dissemination encapsulates something far broader and more diverse than a static pdf journal article. 
+It includes preprints, talks, posters, blog posts, code releases, data deposits, and the various other ways that work leaves the lab and enters the world. 
+It is also the point at which FAIR stops being a plan and hopefully becomes a reality.
+
+## Why write scientific material in Quarto?
+
+Quarto relies on markdown as a [plain text format](https://plain-text.co/) that was designed to be easy to read and write with (see [markdown basics](https://quarto.org/docs/authoring/markdown-basics.html) for details).
+Compared to a word processor like MS Word, the main conceptual distinction is that the source content appears in a different format to the appearance of the document that it outputs.
+The source format is largely plain text and code chunks, whereas the output format depends on what you want to produce (e.g., .html, pdf, presentation slides etc.).
+So, there is a clear and obvious separation of the content from the formatting. 
+
+There are several advantages to writing scientific documents in Quarto:
+
+- it generates fully reproducible documents.
+- prose and code (in multiple programming languages) are combined.
+- easy integration with version control systems that provide a single source of truth.
+- collaboration can easily be coordinated via shared access to a repository.
+- one common workflow can output to a variety of formats, such as websites, blogs, books, scientific reports, presentations.
+- extensions, like [`quarto-preprint`](https://github.com/mvuorre/quarto-preprint) automate the formatting, so you can focus on the content.
+- citations are seamlessly integrated.
+- it is free and open source.
+
+And there is one legitimate limitation:
+
+- if your collaborators are not familiar with using Quarto and markdown documents, then it can be less straightforward.
+
+Here is how we approach this issue.
+We output a pdf or MS word document and send it to collaborators and ask for their written feedback. 
+We then incorporate that feedback into the version-controlled manuscript file with the project repository.
+This process typically relies on the lead author to request feedback, discuss it with the team, and then implement the changes.
+In practice, this is not an onerous task, and it is no worse than the torture of using track changes in MS Word.
+Of course, for very large collaborative teams (maybe those spanning 20 or more individuals), I would suggest that a different format is most suitable, such as a shared document, which anyone can edit.
+
+On balance, for the vast majority of cases in my experience, Quarto is a far superior tool for writing scientific documents when compared to the dominant alternatives.
+
+## The value of preprints
+
+For a variety of reasons [@bourneTenSimpleRules2017; @AcceleratingScientificProgress2024; @OpenScienceWhy2024], we preprint all of our scientific papers before we submit them to peer-review journals.
+Common preprint servers for psychology, neuroscience and related disciplines include [BioRxiv](https://www.biorxiv.org/), [MedRxiv](https://www.medrxiv.org/), [PsyArXiv](https://blog.psyarxiv.com/about-psyarxiv/).
+
+## Talks and other formats
+
+I started writing talks in Quarto using [Revealjs](https://quarto.org/docs/presentations/revealjs/).
+This means that slides for [talks](https://rich-ramsey.com/talks/) and [teaching](https://rich-ramsey.com/teaching/) can be made using a common workflow.
+You can also write blog posts, websites, and books using the same underlying format.  
+
+## Make the repository public
+
+If you've followed along with the previous chapters, then this is the point in proceedings that you make the repository public (if it is not already public).
+This means that you typically turn any private settings to public in GitHub, the OSF or Zenodo, or wherever else you have aspects of your work stored.
+In practice, however, we find that we work with a public facing repository once we start writing up the paper for submission to a journal [@vuorreCuratingResearchAssets2018].
+
+

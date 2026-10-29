@@ -1,0 +1,199 @@
+# Data Management {#sec-data-management}
+
+::: {.callout-tip}
+## tl;dr
+
+Read this book by [Chrystal Lewis](https://cghlewis.com/) from cover to cover [@lewisDataManagementLargeScale2024], and check out here fabulous [blog posts](https://cghlewis.com/blog).
+:::
+
+Data management is the least glamorous part of the research workflow and probably one of the most foundational. 
+The decisions made about how to structure, name, and document data before and during collection determine how smoothly everything downstream goes, as well as the degree to which FAIR principles are satisfied. 
+Retrofitting good data management onto a badly organised dataset is painful. 
+Starting with it costs very little.
+And it is something that my team and I could very much improve upon.
+
+This is another big topic, one that fills an entire book [@lewisDataManagementLargeScale2024].
+Here, I just highlight five aspects that do not cost too much time or effort, but really add value in our experience.
+
+1. A data management plan.
+2. A project-level README file.
+3. Data dictionaries.
+4. A style guide. 
+5. Open file formats.
+
+And once you set these up for one project, many of the basic features generalise to other similar projects.
+This means that you can benefit form efficiency savings since they do not need to be created from scratch for every project.
+
+## The data management plan
+
+Data management plans typically consist of a short document (< 5 pages), which is written before the data are collected, and that details the key aspects of how the data will be managed.
+Use the data management plan to focus your team's efforts on setting up a roadmap to achieving FAIR data.
+And keep it in the project repository so that team members can see it and others can see it once the project is made public.
+Data management plans are becoming more common as funders and ethical committees seek assurance that the data will be managed safely and efficiently.
+
+## A project-level README file
+
+As already mentioned in the @sec-infrastructure section, each project has a [README file](https://www.makeareadme.com/) at the root directory.
+A README file outlines details of the repository, such as folder and file structures, as well as requirements for using the data and code. 
+When anyone lands on a project folder, including future you, then they would immediately be directed to the README file to be oriented to what the repository contains.
+In our experience, the information in a README file is typically already known and written down somewhere, such as in a lab notes document.
+Therefore, routinely writing a README file just encourages the team to write these notes in a more consistent way and in one place.
+In our experience, if baked on from the start of a project, it does not create "extra work", it just forces you to work more consistently.
+
+## Data dictionaries
+
+A data dictionary is a standardised way of reporting features of all variables in a dataset.
+Every person who has worked with behavioural data has at some point encountered a dataset where it is unclear which way round the coding goes.
+A data dictionary makes that unambiguous.
+To make this concrete, consider a typical reaction time dataset with five variables.
+First, we simulate the data and take a look at the first few rows.
+
+```{r}
+#| label: tbl-rt-head
+#| tbl-cap: "First six rows of a simulated reaction time dataset."
+#| code-fold: true
+#| message: false
+#| warning: false
+#| echo: false
+library(tidyverse)
+library(kableExtra)
+
+# Simulate a typical RT dataset
+# 10 participants, 10 items, 2 conditions, RT in ms, accuracy as 0/1
+set.seed(123)
+
+dat <- crossing(
+  subj = str_pad(1:10, width = 2, pad = "0"),
+  item = str_pad(1:10, width = 2, pad = "0"),
+  condition = c("congruent", "incongruent")
+) |>
+  mutate(
+    # RT drawn from a normal distribution, incongruent trials slower
+    rt = case_when(
+      condition == "congruent" ~ round(rnorm(n(), mean = 520, sd = 80)),
+      condition == "incongruent" ~ round(rnorm(n(), mean = 620, sd = 90))
+    ),
+    # Accuracy: higher hit rate for congruent trials
+    acc = case_when(
+      condition == "congruent" ~ rbinom(n(), size = 1, prob = 0.92),
+      condition == "incongruent" ~ rbinom(n(), size = 1, prob = 0.78)
+    )
+  )
+
+# Show the first six rows
+dat |>
+  head() |>
+  knitr::kable(
+    col.names = c("subj", "item", "condition", "rt", "acc"),
+    align = "lllrr"
+  )
+
+# head() |>
+# kbl(
+#   col.names = c("subj", "item", "condition", "rt", "acc"),
+#   align     = "lllrr"
+# ) |>
+# kable_styling(
+#   bootstrap_options = c("striped", "hover"),
+#   full_width        = FALSE
+# )
+```
+
+The dataset has `r nrow(dat)` rows (`r n_distinct(dat$subj)` participants × `r n_distinct(dat$item)` items × `r n_distinct(dat$condition)` conditions) and `r ncol(dat)` variables.
+Notice that `subj` and `item` are zero-padded strings rather than integers.
+This is a small but important choice that ensures correct alphabetical sorting and avoids accidental arithmetic on ID variables.
+
+Now here is the corresponding data dictionary.
+Every variable is documented with its name, a plain-language label, type and format, allowable values, units where applicable, and whether it is a primary collected variable or derived from other variables.
+
+```{r}
+#| label: tbl-rt-dictionary
+#| tbl-cap: "Data dictionary for the simulated reaction time dataset."
+#| code-fold: true
+#| message: false
+#| warning: false
+#| echo: false
+tbl <- tibble(
+  Variable = c("subj", "item", "condition", "rt", "acc"),
+  Label = c(
+    "Participant identifier",
+    "Stimulus item identifier",
+    "Trial condition",
+    "Reaction time",
+    "Response accuracy"
+  ),
+  Type = c(
+    "character",
+    "character",
+    "character",
+    "numeric",
+    "integer"
+  ),
+  Format = c(
+    "zero-padded string (e.g. '01')",
+    "zero-padded string (e.g. '01')",
+    "string",
+    "milliseconds (ms)",
+    "binary"
+  ),
+  `Allowable values` = c(
+    "01 – 10",
+    "01 – 10",
+    "congruent, incongruent",
+    "positive numeric",
+    "0 = incorrect, 1 = correct"
+  ),
+  Origin = c(
+    "primary",
+    "primary",
+    "primary",
+    "primary",
+    "primary"
+  )
+) |>
+  knitr::kable(align = "llllll")
+
+if (knitr::is_html_output()) {
+  tbl |>
+    kableExtra::kable_styling(
+      bootstrap_options = c("striped", "hover"),
+      full_width = TRUE
+    ) |>
+    kableExtra::column_spec(1, bold = TRUE, monospace = TRUE, width = "10%") |>
+    kableExtra::column_spec(2, width = "20%") |>
+    kableExtra::column_spec(3, width = "10%") |>
+    kableExtra::column_spec(4, width = "15%") |>
+    kableExtra::column_spec(5, width = "35%") |>
+    kableExtra::column_spec(6, width = "10%")
+} else {
+  tbl
+}
+```
+
+A few things worth noting about this dictionary:
+
+- The `subj` and `item` columns are documented as character strings, not integers, which reflects how they are actually stored.
+- The `acc` column documents the coding explicitly (0 = incorrect, 1 = correct).
+
+The dictionary itself should be stored as a plain CSV file alongside the data.
+That way it is machine-readable, version-controlled, and readable by anyone without specialist software.
+
+
+## A style guide
+
+Adopting a style guide within a lab aids in standardisation within and across projects. 
+A style guide simply means consistent and standardised way of doing things, such as naming folder and files.
+For example, @lewisDataManagementLargeScale2024 suggests being consistent in the following processes:
+
+1. Directory structures.
+2. File naming.
+3. Variable naming.
+4. Assigning variable values.
+5. Writing code.
+
+Although this seems a bit fussy, it makes your data science life so much easier.
+And like any other standardisation procedure, it makes it so much easier for collaborators, lab members and anyone else to quickly get on board with your data science workflow.
+
+## Open data formats
+
+Data should be stored in open (non-proprietary) file formats, such as CSV for tabular data, so that they can be accessed by any software.
