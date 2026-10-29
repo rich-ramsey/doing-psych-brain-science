@@ -114,7 +114,7 @@
     "href": "index.html#license-and-citation",
     "title": "Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows",
     "section": "License and citation",
-    "text": "License and citation\n© Rich Ramsey, ETH Zürich. Licensed under CC BY 4.0.\n\n\nCode\n@book{RamseyDoingPsychBrainScience2026,\n  title = {Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows},\n  author = {Ramsey, Richard},\n  year = {2026},\n  month = {1},\n  edition = {version 0.1},\n  url = {},\n  doi = {}\n}",
+    "text": "License and citation\n© Rich Ramsey, ETH Zürich. Licensed under CC BY 4.0.\n\n\nCode\n@book{RamseyDoingPsychBrainScience2026,\n  title = {Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows},\n  author = {Ramsey, Richard},\n  year = {2026},\n  month = {10},\n  edition = {version 0.1},\n  url = {https://rich-ramsey.github.io/doing-psych-brain-science/}\n}",
     "crumbs": [
       "Preface"
     ]
