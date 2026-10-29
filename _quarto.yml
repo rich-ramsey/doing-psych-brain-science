@@ -11,7 +11,7 @@ book:
   version: "0.1"
   date: today
   repo-url: https://github.com/rich-ramsey/doing-psych-brain-science
-  repo-actions: [edit, issue, source]
+  repo-actions: [issue, source]
 
   page-footer:
     left: "© Rich Ramsey, ETH Zürich. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"

@@ -3,12 +3,12 @@ project:
   output-dir: _book
   
 book:
-  # sidebar:
-  #   tools:
-  #     - icon: file-pdf
-  #       text: "Download PDF"
-  #       href: https://rich-ramsey.github.io/your-repo-name/book.pdf
-
+  sidebar:
+    tools:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: https://github.com/rich-ramsey/doing-psych-brain-science/raw/main/_book-pdf/Doing-Psychological-and-Brain-Science-Research--A-Field-Report-On-Scientific-Workflows.pdf
+        target: _blank
   chapters:
     - index.qmd
 
