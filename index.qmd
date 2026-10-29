@@ -103,9 +103,8 @@ This means that I am very much a beginner in the software space and I use these 
   title = {Doing Psychological and Brain Science Research: A Field Report On Scientific Workflows},
   author = {Ramsey, Richard},
   year = {2026},
-  month = {1},
+  month = {10},
   edition = {version 0.1},
-  url = {},
-  doi = {}
+  url = {https://rich-ramsey.github.io/doing-psych-brain-science/}
 }
 ```
